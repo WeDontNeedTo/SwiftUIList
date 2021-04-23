@@ -13,9 +13,11 @@
 		0A49C229263163780035D6DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A49C228263163780035D6DE /* Preview Assets.xcassets */; };
 		0A49C234263163780035D6DE /* MintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A49C233263163780035D6DE /* MintTests.swift */; };
 		0A49C23F263163780035D6DE /* MintUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A49C23E263163780035D6DE /* MintUITests.swift */; };
-		0A49C250263181EA0035D6DE /* TaskCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A49C24F263181EA0035D6DE /* TaskCard.swift */; };
-		0A49C2552631D0FA0035D6DE /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A49C2542631D0FA0035D6DE /* DoneButton.swift */; };
+		0A49C250263181EA0035D6DE /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A49C24F263181EA0035D6DE /* TaskCardView.swift */; };
+		0A49C2552631D0FA0035D6DE /* DoneButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A49C2542631D0FA0035D6DE /* DoneButtonView.swift */; };
 		0A66EFA42631EBF30080D509 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66EFA32631EBF30080D509 /* AddTaskView.swift */; };
+		0ACD5E6B26331A48001FD17A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD5E6A26331A48001FD17A /* Task.swift */; };
+		0ACD5E7026332072001FD17A /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD5E6F26332072001FD17A /* TaskList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +50,11 @@
 		0A49C23A263163780035D6DE /* MintUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MintUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A49C23E263163780035D6DE /* MintUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MintUITests.swift; sourceTree = "<group>"; };
 		0A49C240263163780035D6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A49C24F263181EA0035D6DE /* TaskCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCard.swift; sourceTree = "<group>"; };
-		0A49C2542631D0FA0035D6DE /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
+		0A49C24F263181EA0035D6DE /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
+		0A49C2542631D0FA0035D6DE /* DoneButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButtonView.swift; sourceTree = "<group>"; };
 		0A66EFA32631EBF30080D509 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		0ACD5E6A26331A48001FD17A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		0ACD5E6F26332072001FD17A /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +105,13 @@
 		0A49C220263163760035D6DE /* Mint */ = {
 			isa = PBXGroup;
 			children = (
+				0ACD5E7926332BA8001FD17A /* ViewModel */,
+				0ACD5E7826332B94001FD17A /* View */,
+				0ACD5E7426332B16001FD17A /* Model */,
 				0A49C221263163760035D6DE /* MintApp.swift */,
-				0A49C223263163760035D6DE /* ContentView.swift */,
 				0A49C225263163780035D6DE /* Assets.xcassets */,
 				0A49C22A263163780035D6DE /* Info.plist */,
 				0A49C227263163780035D6DE /* Preview Content */,
-				0A49C24F263181EA0035D6DE /* TaskCard.swift */,
-				0A49C2542631D0FA0035D6DE /* DoneButton.swift */,
-				0A66EFA32631EBF30080D509 /* AddTaskView.swift */,
 			);
 			path = Mint;
 			sourceTree = "<group>";
@@ -137,6 +140,33 @@
 				0A49C240263163780035D6DE /* Info.plist */,
 			);
 			path = MintUITests;
+			sourceTree = "<group>";
+		};
+		0ACD5E7426332B16001FD17A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD5E6A26331A48001FD17A /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0ACD5E7826332B94001FD17A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A49C223263163760035D6DE /* ContentView.swift */,
+				0A49C24F263181EA0035D6DE /* TaskCardView.swift */,
+				0A49C2542631D0FA0035D6DE /* DoneButtonView.swift */,
+				0A66EFA32631EBF30080D509 /* AddTaskView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0ACD5E7926332BA8001FD17A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD5E6F26332072001FD17A /* TaskList.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,10 +298,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A49C250263181EA0035D6DE /* TaskCard.swift in Sources */,
+				0ACD5E7026332072001FD17A /* TaskList.swift in Sources */,
+				0A49C250263181EA0035D6DE /* TaskCardView.swift in Sources */,
 				0A66EFA42631EBF30080D509 /* AddTaskView.swift in Sources */,
-				0A49C2552631D0FA0035D6DE /* DoneButton.swift in Sources */,
+				0A49C2552631D0FA0035D6DE /* DoneButtonView.swift in Sources */,
 				0A49C224263163760035D6DE /* ContentView.swift in Sources */,
+				0ACD5E6B26331A48001FD17A /* Task.swift in Sources */,
 				0A49C222263163760035D6DE /* MintApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

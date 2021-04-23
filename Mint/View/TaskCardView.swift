@@ -1,5 +1,5 @@
 //
-//  TaskCard.swift
+//  TaskCardView.swift
 //  Mint
 //
 //  Created by dmitry on 22.04.2021.
@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct TaskCardView: View {
-    var tasksText: String
+    var task: Task
     var body: some View {
         HStack{
-            DoneButton()
-            Text(tasksText)
+            DoneButtonView()
+            Text(task.tasksText)
             Spacer()
         }
     }
 }
 
-struct TaskCard_Previews: PreviewProvider {
+struct TaskCardView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskCardView(tasksText: "to-do")
+        TaskCardView(task: Task(tasksText: "to-do"))
             .previewLayout(.fixed(width: 300, height: 50))
     }
 }

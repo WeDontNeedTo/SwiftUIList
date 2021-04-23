@@ -1,5 +1,5 @@
 //
-//  DoneButton.swift
+//  DoneButtonView.swift
 //  Mint
 //
 //  Created by dmitry on 22.04.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DoneButton: View {
+struct DoneButtonView: View {
     @State var isSet: Bool = false
     
     
@@ -28,6 +28,6 @@ struct DoneButton: View {
 
 struct DoneButton_Previews: PreviewProvider {
     static var previews: some View {
-        DoneButton()
+        DoneButtonView()
     }
 }
