@@ -23,7 +23,8 @@ struct MainView: View {
                                 }
                             }
                             .onDelete(perform: { indexSet in
-                                tasks.TaskListItems.remove(atOffsets: indexSet)
+                                let index = indexSet[indexSet.startIndex]
+                                tasks.TaskListItems[index].isDeleted.toggle()
                             })
                         }
                         Section(header: Text("Done")) {
