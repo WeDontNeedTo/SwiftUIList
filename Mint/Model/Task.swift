@@ -8,7 +8,9 @@
 import Foundation
 
 
-struct Task: Identifiable {
-    let id = UUID()
-    let tasksText: String
+struct Task: Identifiable, Codable {
+    var id = UUID()
+    var tasksText: String
+    var isDone = false
+    var isDeleted = false
 }

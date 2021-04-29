@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct TaskCardView: View {
-    var task: Task
+    @Binding var task: Task
+    
     var body: some View {
         HStack{
-            DoneButtonView()
-            Text(task.tasksText)
+            DoneButtonView(isSet: $task.isDone)
+            Text(task.tasksText).strikethrough(task.isDone)
             Spacer()
         }
     }
@@ -20,7 +21,7 @@ struct TaskCardView: View {
 
 struct TaskCardView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskCardView(task: Task(tasksText: "to-do"))
+        TaskCardView(task: .constant(Task(tasksText: "to-do")))
             .previewLayout(.fixed(width: 300, height: 50))
     }
 }

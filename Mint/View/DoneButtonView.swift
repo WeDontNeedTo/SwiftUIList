@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct DoneButtonView: View {
-    @State var isSet: Bool = false
+    @Binding var isSet: Bool
     
     
     var body: some View {
         Button(action: {
             isSet.toggle()
+            
             }) {
             Image(systemName: isSet ? "largecircle.fill.circle" : "circle" )
                 .resizable()
                 .scaledToFit()
                 .frame(width: 22)
                 .foregroundColor(Color.green)
-                    
             }
     }
     
@@ -28,6 +28,6 @@ struct DoneButtonView: View {
 
 struct DoneButton_Previews: PreviewProvider {
     static var previews: some View {
-        DoneButtonView()
+        DoneButtonView(isSet: .constant(false))
     }
 }

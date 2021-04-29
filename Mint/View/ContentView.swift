@@ -1,50 +1,32 @@
 //
-//  ContentView.swift
+//  ContantView.swift
 //  Mint
 //
-//  Created by dmitry on 22.04.2021.
+//  Created by dmitry on 29.04.2021.
 //
 
 import SwiftUI
 
-
 struct ContentView: View {
-    @State private var showingSheet = false
     @ObservedObject var tasks = TaskList()
     
-
     var body: some View {
-        VStack{
-            NavigationView {
-                List{
-                    ForEach(tasks.TaskListItems) { task in
-                        TaskCardView(task: task)
-                    }
-                }
-                .navigationTitle("To-do")
-                .toolbar {
-                    Button(action: {
-                        showingSheet.toggle()
-                    }
-                        ) {
-                            Image(systemName:"plus")
-    //                            .renderingMode(.original)
-                                .foregroundColor(Color.green)
+        TabView {
+                    MainView(tasks: tasks)
+                        .tabItem {
+                            Label("To-Do", systemImage: "list.dash")
                         }
-    //                    .buttonStyle(PlainButtonStyle())
-                    }
-            }
-            .sheet(isPresented: $showingSheet) {
-                AddTaskView(tasks: tasks)
-            }
-        }
+
+                    DeletedView(tasks: tasks)
+                        .tabItem {
+                            Label("Deleted", systemImage: "trash")
+                        }
+                }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContantView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ContentView()
-        }
+        ContentView()
     }
 }
