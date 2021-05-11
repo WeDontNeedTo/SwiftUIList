@@ -14,24 +14,34 @@ struct DeletedView: View {
         VStack{
             NavigationView {
                 Form {
-                        
-                            ForEach(0..<tasks.TaskListItems.count, id: \.self) { index in
-                                if  tasks.TaskListItems[index].isDeleted{
-                                    TaskCardView(task: $tasks.TaskListItems[index])
+                    
+                    ForEach(0..<tasks.taskListItems.count, id: \.self) { index in
+                        if  tasks.taskListItems[index].isDeleted{
+                            HStack{
+                                Text(tasks.taskListItems[index].tasksText)
+                                    .foregroundColor(Color.gray)
+                                Spacer()
+                                Divider()
+                                Button("Recover") {
+                                    withAnimation(.spring()) {
+                                        tasks.taskListItems[index].isDeleted.toggle()
+                                    };
                                 }
-                            }
-                            .onDelete(perform: { indexSet in
-                                tasks.TaskListItems.remove(atOffsets: indexSet)
-                            })
                         }
-                .navigationTitle("Deleted task's")
+                            }
+                        }
+                        .onDelete(perform: { indexSet in
+                            tasks.taskListItems.remove(atOffsets: indexSet)
+                        })
+                    }
+                    .navigationTitle("Deleted task's")
+                }
             }
         }
     }
-}
-
-struct DeletedView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeletedView(tasks: TaskList())
+    
+    struct DeletedView_Previews: PreviewProvider {
+        static var previews: some View {
+            DeletedView(tasks: TaskList())
+        }
     }
-}

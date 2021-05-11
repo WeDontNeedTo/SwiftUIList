@@ -9,35 +9,26 @@ import Foundation
 
 
 class TaskList: ObservableObject {
-    @Published var TaskListItems: [Task]{
+    @Published var taskListItems: [Task]{
         didSet{
-            refresh()
+            save()
         }
     }
     
     init() {
-        if let data = UserDefaults.standard.data(forKey: "SavedData") {
+        if let data = UserDefaults.standard.data(forKey: Constants.todosKey) {
             if let decoded = try? JSONDecoder().decode([Task].self, from: data) {
-                self.TaskListItems = decoded
+                self.taskListItems = decoded
                 return
             }
         }
-        self.TaskListItems=[]
+        self.taskListItems=load("preloadedTasks.json")
     }
     
-    private func save(){
-        if let encoded = try? JSONEncoder().encode(TaskListItems){
-            UserDefaults.standard.set(encoded, forKey: "SavedData")
+    func save(){
+        if let encoded = try? JSONEncoder().encode(taskListItems){
+            UserDefaults.standard.set(encoded, forKey: Constants.todosKey)
         }
-    }
-    
-    func add(_ newTask: Task){
-        self.TaskListItems.append(newTask)
-        self.save()
-    }
-    
-    func refresh(){
-        self.save()
     }
 }
 

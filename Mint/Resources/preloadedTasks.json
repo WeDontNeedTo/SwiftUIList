@@ -1,0 +1,20 @@
+[
+    {
+        "id":"FB23EA0B-E165-40B8-804B-FF287F9A2DBF",
+        "tasks_text": "Сделать вторую стадию",
+        "is_done": false,
+        "is_deleted": false
+    },
+    {
+        "id":"22E9EF66-2D79-4C6B-9813-8B891D55B2D6",
+        "tasks_text": "Сделать первую стадию",
+        "is_done": true,
+        "is_deleted": false
+    },
+    {
+        "id":"FF26876E-81D7-4853-80CC-4653D21DF9FB",
+        "tasks_text": "Изучить синтаксис Swift",
+        "is_done": true,
+        "is_deleted": true
+    }
+]

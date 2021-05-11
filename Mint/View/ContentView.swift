@@ -12,16 +12,16 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-                    MainView(tasks: tasks)
-                        .tabItem {
-                            Label("To-Do", systemImage: "list.dash")
-                        }
-
-                    DeletedView(tasks: tasks)
-                        .tabItem {
-                            Label("Deleted", systemImage: "trash")
-                        }
+            MainView(tasks: tasks)
+                .tabItem {
+                    Label("To-Do", systemImage: "list.dash")
                 }
+            
+            DeletedView(tasks: tasks)
+                .tabItem {
+                    Label("Deleted", systemImage: "trash")
+                }
+        }
     }
 }
 

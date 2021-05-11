@@ -9,25 +9,38 @@ import SwiftUI
 
 struct DoneButtonView: View {
     @Binding var isSet: Bool
+    @State var isAnimate: Bool = true
     
     
     var body: some View {
         Button(action: {
-            isSet.toggle()
-            
-            }) {
+            withAnimation(.spring()) {
+                isSet.toggle()
+            }
+        }) {
             Image(systemName: isSet ? "largecircle.fill.circle" : "circle" )
                 .resizable()
                 .scaledToFit()
                 .frame(width: 22)
                 .foregroundColor(Color.green)
-            }
+                .animation(.default)
+                .opacity(isAnimate ? 0 : 1)
+                .transition(isAnimate ? .slide : .identity)
+        }
+        .onAppear {
+            isAnimate = false
+        }
+        
     }
     
 }
 
 struct DoneButton_Previews: PreviewProvider {
     static var previews: some View {
-        DoneButtonView(isSet: .constant(false))
+        Group {
+            DoneButtonView(isSet: .constant(false))
+            DoneButtonView(isSet: .constant(false))
+
+        }
     }
 }

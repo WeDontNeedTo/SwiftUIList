@@ -11,31 +11,40 @@ import SwiftUI
 struct MainView: View {
     @State private var showingSheet = false
     @ObservedObject var tasks: TaskList
+
+    func isDoneFilter(by index: Int) -> Bool {
+        tasks.taskListItems[index].isDone
+    }
+    
+    func isDeleteFilter(by index: Int) -> Bool {
+        tasks.taskListItems[index].isDeleted
+    }
     
     var body: some View {
+        
         VStack{
             NavigationView {
                 Form {
                         Section(header: Text("To-do")) {
-                            ForEach(0..<tasks.TaskListItems.count, id: \.self) { index in
-                                if !tasks.TaskListItems[index].isDone && !tasks.TaskListItems[index].isDeleted{
-                                    TaskCardView(task: $tasks.TaskListItems[index])
+                            ForEach(0..<tasks.taskListItems.count, id: \.self) { index in
+                                if !isDoneFilter(by: index) && !isDeleteFilter(by: index) {
+                                    TaskCardView(task: $tasks.taskListItems[index])
                                 }
                             }
                             .onDelete(perform: { indexSet in
                                 let index = indexSet[indexSet.startIndex]
-                                tasks.TaskListItems[index].isDeleted.toggle()
+                                tasks.taskListItems[index].isDeleted.toggle()
                             })
                         }
                         Section(header: Text("Done")) {
-                            ForEach(0..<tasks.TaskListItems.count, id: \.self) { index in
-                                if tasks.TaskListItems[index].isDone && !tasks.TaskListItems[index].isDeleted{
-                                    TaskCardView(task: $tasks.TaskListItems[index])
+                            ForEach(0..<tasks.taskListItems.count, id: \.self) { index in
+                                if tasks.taskListItems[index].isDone && !tasks.taskListItems[index].isDeleted{
+                                    TaskCardView(task: $tasks.taskListItems[index])
                                 }
                             }
                             .onDelete(perform: { indexSet in
                                 let index = indexSet[indexSet.startIndex]
-                                tasks.TaskListItems[index].isDeleted.toggle()
+                                tasks.taskListItems[index].isDeleted.toggle()
                             })
                         }
                 }

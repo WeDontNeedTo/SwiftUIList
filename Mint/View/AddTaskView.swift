@@ -39,7 +39,7 @@ struct AddTaskView: View {
     
     private func createNewTask() {
         let newTask = Task(tasksText: newTaskText)
-        tasks.TaskListItems.append(newTask)
+        tasks.taskListItems.append(newTask)
     }
 }
 
