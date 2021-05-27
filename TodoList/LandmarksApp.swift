@@ -1,12 +1,11 @@
 //
-//  TodoListApp.swift
+//  LandmarksApp.swift
 //  TodoList
 //
-//  Created by Владислав Положай on 24.05.2021.
+//  Created by Владислав Положай on 27.05.2021.
 //
 
 import SwiftUI
-
 
 @main
 struct LandmarksApp: App {
