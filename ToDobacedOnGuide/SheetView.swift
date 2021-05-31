@@ -17,7 +17,6 @@ struct SheetView: View {
 //    func addNewToDo() {
 //        addnewtodo.append(ToDoElement(id: Int(addnewtodo.count + 1),isDone: Bool(false),description: String("some text")))
 //    }
-    
     var body: some View {
         NavigationView {
             VStack{
@@ -32,11 +31,15 @@ struct SheetView: View {
                 })
             {
                     Text("Cancel").bold()
+                        
             },
             trailing: Button(action: {
-                addnewtodo.append(<#T##newElement: ToDoElement##ToDoElement#>)
+                addnewtodo.append(ToDoElement(id: addnewtodo.count + 1, isDone: true, description: newTodo))
+                self.showSheetView = false
+
+                
             }, label: {
-                Text("Добавить")
+                Text("Add")
             }))
 
         }
