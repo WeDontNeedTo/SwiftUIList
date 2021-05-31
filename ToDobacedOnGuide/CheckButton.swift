@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 struct CheckButton: View {
-    @State var isSet: Bool
+    @Binding var isSet: Bool
     var body: some View {
         Button(action: {
             isSet.toggle()
@@ -10,10 +10,11 @@ struct CheckButton: View {
                 .foregroundColor(.yellow)
         }
     }
+    
 }
 
 struct CheckButton_Previews: PreviewProvider {
     static var previews: some View {
-        CheckButton(isSet: false)
+        CheckButton(isSet: .constant(false))
     }
 }
