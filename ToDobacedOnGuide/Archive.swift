@@ -1,16 +1,19 @@
-//
-//  Archive.swift
-//  ToDobacedOnGuide
-//
-//  Created by Garpix on 01.06.2021.
-//
-
 import SwiftUI
+import Combine
 
 struct Archive: View {
+    @State private var isSet: Bool = false
+   // @Binding someArray: [ToDoElement]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            VStack{
+                Text("Some text")
+            }
+            .navigationTitle("Archeve")
+        }
+        .padding(0.0)
     }
+    
 }
 
 struct Archive_Previews: PreviewProvider {

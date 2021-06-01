@@ -1,21 +1,21 @@
 [{
         "id": 0,
-        "isDone": true,
+        "isDone": false,
         "description": "Артур"
     },
     {
         "id": 1,
-        "isDone": true,
+        "isDone": false,
         "description": "Данил"
     },
     {
         "id": 2,
-        "isDone": false,
+        "isDone": true,
         "description": "Калич"
     },
     {
         "id": 4,
-        "isDone": false,
+        "isDone": true,
         "description": "Тема"
     }
 ]

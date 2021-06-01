@@ -2,10 +2,12 @@ import SwiftUI
 import Combine
 
 struct ToDoList: View {
+    @State var toDoElements: [ToDoElement] = load("toDoData.json")
     @State private var isSet: Bool = false
     @State var showSheetView = false
-    
-    @State var someArray:[ToDoElement]=[ToDoElement(id: 0, isDone: false, description: "Покушать"), ToDoElement(id: 1, isDone: true, description: "Погулять"), ToDoElement(id: 2, isDone: false, description: "Найти себя"),ToDoElement(id: 3, isDone: true, description: "Получить диплом"),]
+
+//    var toDoElement: ToDoElement
+//    @State var someArray:[ToDoElement]=[ToDoElement(id: 0, isDone: false, description: "Покушать"), ToDoElement(id: 1, isDone: true, description: "Погулять"), ToDoElement(id: 2, isDone: false, description: "Найти себя"),ToDoElement(id: 3, isDone: true, description: "Получить диплом"),]
 
     var buttonAdd: some View {
         HStack{
@@ -16,26 +18,34 @@ struct ToDoList: View {
         }
     }
     var body: some View {
+
         NavigationView{
             VStack{
                 List {
-                    ForEach(someArray.indices, id: \.self) { item in
+                    ForEach(toDoElements.indices, id: \.self) { index in
                         HStack {
-                            Text(someArray[item].description)
-                                .strikethrough(someArray[item].isDone)
-                            
+                            Text(toDoElements[index].description)
+                                .strikethrough(toDoElements[index].isDone)
+
                             Spacer()
-                            CheckButton(isSet: $someArray[item].isDone)
-                            
+                            CheckButton(isSet: $toDoElements[index].isDone)
+
                         }
                     }
                 }
                 .listStyle(GroupedListStyle())
+//                List(toDoElements, id: \.id){ toDoElement in
+//                    Text(toDoElement.description)
+//                        .strikethrough(toDoElement.isDone)
+//                    Spacer()
+//                   // CheckButton(isSet: $toDoElement.isDone)
+//
+//                }
             }
             .navigationTitle("To Do List")
             .navigationBarItems(trailing: buttonAdd)
             .sheet(isPresented: $showSheetView){
-                SheetView(showSheetView: self.$showSheetView, addnewtodo: self.$someArray)
+                AddToDoPage(showSheetView: self.$showSheetView, addnewtodo: self.$toDoElements)
             }
         }
         .padding(0.0)
