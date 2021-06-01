@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
+
 
 @main
 struct MintApp: App {
+    init() {
+      FirebaseApp.configure()
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -10,10 +10,12 @@ import SwiftUI
 struct TaskCardView: View {
     @Binding var task: Task
     
+    
     var body: some View {
         HStack{
-            DoneButtonView(isSet: $task.isDone)
-            Text(task.tasksText).strikethrough(task.isDone)
+            DoneButtonView(task: $task)
+            TextField("",text: $task.tasksText)
+                .foregroundColor( task.isDone ? .gray : .black)
             Spacer()
         }
     }

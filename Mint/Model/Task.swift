@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 
-struct Task: Identifiable, Codable {
-    var id = UUID()
+struct Task: Identifiable, Codable, Equatable {
+    @DocumentID var id: String?
     var tasksText: String
     var isDone = false
     var isDeleted = false

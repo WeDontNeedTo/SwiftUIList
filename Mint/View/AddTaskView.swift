@@ -10,7 +10,7 @@ import SwiftUI
 struct AddTaskView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var newTaskText = ""
-    var tasks: TaskList
+    var tasks: TaskVM
     
     var body: some View {
         NavigationView{
@@ -39,12 +39,13 @@ struct AddTaskView: View {
     
     private func createNewTask() {
         let newTask = Task(tasksText: newTaskText)
-        tasks.taskListItems.append(newTask)
+        TaskVM.addTask(task: newTask)
+        tasks.getTasks()
     }
 }
 
 struct AddTaskView_Previews: PreviewProvider {
     static var previews: some View {
-        AddTaskView(tasks: TaskList())
+        AddTaskView(tasks: TaskVM())
     }
 }

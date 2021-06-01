@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DeletedView: View {
-    @ObservedObject var tasks: TaskList
+    @ObservedObject var tasks: TaskVM
     
     var body: some View {
         VStack{
@@ -25,14 +25,16 @@ struct DeletedView: View {
                                 Button("Recover") {
                                     withAnimation(.spring()) {
                                         tasks.taskListItems[index].isDeleted.toggle()
+                                        TaskVM.updateTask(task: tasks.taskListItems[index])
                                     };
                                 }
                         }
                             }
                         }
-                        .onDelete(perform: { indexSet in
-                            tasks.taskListItems.remove(atOffsets: indexSet)
-                        })
+                        .onDelete {index in
+                            tasks.getTasks()
+                            TaskVM.deleteTask(task: tasks.taskListItems[index.first!])
+                        }
                     }
                     .navigationTitle("Deleted task's")
                 }
@@ -42,6 +44,6 @@ struct DeletedView: View {
     
     struct DeletedView_Previews: PreviewProvider {
         static var previews: some View {
-            DeletedView(tasks: TaskList())
+            DeletedView(tasks: TaskVM())
         }
     }

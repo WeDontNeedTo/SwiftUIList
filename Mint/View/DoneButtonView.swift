@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct DoneButtonView: View {
-    @Binding var isSet: Bool
+    @Binding var task: Task
     @State var isAnimate: Bool = true
     
     
     var body: some View {
         Button(action: {
             withAnimation(.spring()) {
-                isSet.toggle()
+                task.isDone.toggle()
+                TaskVM.updateTask(task: task)
             }
         }) {
-            Image(systemName: isSet ? "largecircle.fill.circle" : "circle" )
+            Image(systemName: task.isDone ? "largecircle.fill.circle" : "circle" )
                 .resizable()
                 .scaledToFit()
                 .frame(width: 22)
@@ -38,8 +39,7 @@ struct DoneButtonView: View {
 struct DoneButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            DoneButtonView(isSet: .constant(false))
-            DoneButtonView(isSet: .constant(false))
+            DoneButtonView(task: .constant(Task(tasksText: "to-do")))
 
         }
     }

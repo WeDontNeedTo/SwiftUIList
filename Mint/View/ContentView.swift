@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var tasks = TaskList()
+    @ObservedObject var tasks = TaskVM()
     
     var body: some View {
         TabView {
