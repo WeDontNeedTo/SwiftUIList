@@ -1,9 +1,10 @@
 import SwiftUI
 import Combine
-// Here is state
-struct RowsView: View {
+
+struct ToDoList: View {
     @State private var isSet: Bool = false
     @State var showSheetView = false
+    
     @State var someArray:[ToDoElement]=[ToDoElement(id: 0, isDone: false, description: "Покушать"), ToDoElement(id: 1, isDone: true, description: "Погулять"), ToDoElement(id: 2, isDone: false, description: "Найти себя"),ToDoElement(id: 3, isDone: true, description: "Получить диплом"),]
 
     var buttonAdd: some View {
@@ -11,7 +12,6 @@ struct RowsView: View {
             Button(action: {self.showSheetView.toggle()}, label: {
                 Image(systemName: "square.and.pencil")
                     .foregroundColor(.yellow)
-                
             })
         }
     }
@@ -38,14 +38,12 @@ struct RowsView: View {
                 SheetView(showSheetView: self.$showSheetView, addnewtodo: self.$someArray)
             }
         }
-        
         .padding(0.0)
-        
     }
 }
 
 struct RowsView_Previews: PreviewProvider {
     static var previews: some View {
-        RowsView()
+        ToDoList()
     }
 }
