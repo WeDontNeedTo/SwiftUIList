@@ -1,0 +1,26 @@
+[{
+        "id": 0,
+        "isDone": true,
+        "description": "Выполнить 1 этап"
+    },
+    {
+        "id": 1,
+        "isDone": false,
+        "description": "Выполнить 2 этап"
+    },
+    {
+        "id": 2,
+        "isDone": false,
+        "description": "Купить мак"
+    },
+    {
+        "id": 3,
+        "isDone": false,
+        "description": "Закончить универ"
+    },
+    {
+        "id": 4,
+        "isDone": true,
+        "description": "Написать диплом"
+    }
+]
