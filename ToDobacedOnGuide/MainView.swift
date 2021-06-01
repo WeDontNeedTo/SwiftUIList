@@ -9,12 +9,26 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView{
+            Trash()
+                .tabItem {
+                    Label("Trash", systemImage: "trash")
+                }
+            ContentView()
+                .tabItem {
+                    Label("Main", systemImage: "house")
+                }
+            Archive()
+                .tabItem {
+                    Label("Archive", systemImage: "archivebox")
+                }
+        }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+//            .environmentObject(Archive())
     }
 }

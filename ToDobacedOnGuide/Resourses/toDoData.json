@@ -1,6 +1,6 @@
 [{
         "id": 0,
-        "isDone": true,
+        "isDone": false,
         "description": "Выполнить 1 этап"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
         "id": 4,
-        "isDone": true,
+        "isDone": false,
         "description": "Написать диплом"
     }
 ]
