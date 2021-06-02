@@ -16,7 +16,7 @@ struct MintApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AuthView()
                 .accentColor(.green)
         }
     }
