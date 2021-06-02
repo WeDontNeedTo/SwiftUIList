@@ -15,8 +15,18 @@ struct TaskCardView: View {
         HStack{
             DoneButtonView(task: $task)
             TextField("",text: $task.tasksText)
-                .foregroundColor( task.isDone ? .gray : .black)
+                .foregroundColor(task.isDeleted ? .gray : task.isDone ? .gray : .black)
+                .disabled(task.isDeleted)
             Spacer()
+            if task.isDeleted{
+                Divider()
+                Button("Recover") {
+                    withAnimation(.spring()) {
+                        task.isDeleted.toggle()
+                        TaskVM.updateTask(task: task)
+                    };
+                }
+            }
         }
     }
 }

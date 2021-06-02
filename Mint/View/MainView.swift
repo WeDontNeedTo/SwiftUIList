@@ -25,11 +25,11 @@ struct MainView: View {
     func signOut(){
         let firebaseAuth = Auth.auth()
         do {
-          try firebaseAuth.signOut()
+            try firebaseAuth.signOut()
             UserDefaults.standard.set(false, forKey: "status")
-                NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
         } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
+            print ("Error signing out: %@", signOutError)
         }
     }
     
@@ -74,12 +74,12 @@ struct MainView: View {
                         }
                     }
                     ToolbarItem(placement: .automatic){
-                    Button(action: {
-                        showingSheet.toggle()
-                    }
-                    ) {
-                        Image(systemName:"plus")
-                    }
+                        Button(action: {
+                            showingSheet.toggle()
+                        }
+                        ) {
+                            Image(systemName:"plus")
+                        }
                     }
                     
                 }
@@ -87,7 +87,6 @@ struct MainView: View {
             .sheet(isPresented: $showingSheet) {
                 AddTaskView(tasks: tasks)
                     .accentColor(.green)
-                
             }
         }
         .onAppear {

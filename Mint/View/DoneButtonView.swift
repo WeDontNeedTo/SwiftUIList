@@ -23,11 +23,12 @@ struct DoneButtonView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 22)
-                .foregroundColor(Color.green)
+                .foregroundColor(task.isDeleted ? .gray : .green)
                 .animation(.default)
                 .opacity(isAnimate ? 0 : 1)
                 .transition(isAnimate ? .slide : .identity)
         }
+        .disabled(task.isDeleted)
         .onAppear {
             isAnimate = false
         }
@@ -40,7 +41,7 @@ struct DoneButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             DoneButtonView(task: .constant(Task(tasksText: "to-do")))
-
+            
         }
     }
 }

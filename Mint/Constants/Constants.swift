@@ -11,4 +11,3 @@ import Foundation
 struct Constants {
     static let todosKey: String = "SavedData"
 }
-

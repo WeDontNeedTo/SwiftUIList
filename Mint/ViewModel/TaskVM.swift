@@ -10,6 +10,7 @@ import Foundation
 
 class TaskVM: ObservableObject {
     @Published var taskListItems: [Task] = []
+    @Published var taskListSearch: [Task] = []
     
     func getTasks() {
         TaskRepository.shared.getTasks { tasks in

@@ -17,33 +17,22 @@ struct DeletedView: View {
                     
                     ForEach(0..<tasks.taskListItems.count, id: \.self) { index in
                         if  tasks.taskListItems[index].isDeleted{
-                            HStack{
-                                Text(tasks.taskListItems[index].tasksText)
-                                    .foregroundColor(Color.gray)
-                                Spacer()
-                                Divider()
-                                Button("Recover") {
-                                    withAnimation(.spring()) {
-                                        tasks.taskListItems[index].isDeleted.toggle()
-                                        TaskVM.updateTask(task: tasks.taskListItems[index])
-                                    };
-                                }
-                        }
-                            }
-                        }
-                        .onDelete {index in
-                            tasks.getTasks()
-                            TaskVM.deleteTask(task: tasks.taskListItems[index.first!])
+                            TaskCardView(task: $tasks.taskListItems[index])
                         }
                     }
-                    .navigationTitle("Deleted task's")
+                    .onDelete {index in
+                        tasks.getTasks()
+                        TaskVM.deleteTask(task: tasks.taskListItems[index.first!])
+                    }
                 }
+                .navigationTitle("Deleted task's")
             }
         }
     }
-    
-    struct DeletedView_Previews: PreviewProvider {
-        static var previews: some View {
-            DeletedView(tasks: TaskVM())
-        }
+}
+
+struct DeletedView_Previews: PreviewProvider {
+    static var previews: some View {
+        DeletedView(tasks: TaskVM())
     }
+}

@@ -21,6 +21,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("Deleted", systemImage: "trash")
                 }
+            
+            TaskSearchView(tasks: tasks)
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
         }
     }
 }
