@@ -12,7 +12,7 @@ struct Archive: View {
             VStack{
                 List {
                     ForEach(toDoElements.indices, id: \.self) { index in
-                        if (toDoElements[index].isDone){
+                        if (toDoElements[index].isArcheveted){
                         HStack {
                                 Text(toDoElements[index].description)
                                     .strikethrough()

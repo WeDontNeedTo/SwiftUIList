@@ -1,21 +1,29 @@
 [{
         "id": 0,
         "isDone": false,
-        "description": "Артур"
+        "description": "Артур",
+        "isDeleted": false,
+        "isArcheveted": false
     },
     {
         "id": 1,
         "isDone": false,
-        "description": "Данил"
+        "description": "Данил",
+        "isDeleted": false,
+        "isArcheveted": false
     },
     {
         "id": 2,
         "isDone": true,
-        "description": "Калич"
+        "description": "Калич",
+        "isDeleted": false,
+        "isArcheveted": false
     },
     {
         "id": 4,
         "isDone": true,
-        "description": "Тема"
+        "description": "Тема",
+        "isDeleted": false,
+        "isArcheveted": true
     }
 ]
