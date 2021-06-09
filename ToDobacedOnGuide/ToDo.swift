@@ -10,4 +10,6 @@ struct ToDoElement: Hashable, Codable, Identifiable {
     var description : String
 
 }
-
+//class TaskStore: ObservableObject{
+//    @Published var tasks = [ToDoElement]()
+//}

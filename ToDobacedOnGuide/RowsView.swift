@@ -3,6 +3,8 @@ import Combine
 
 struct RowsView: View {
     @State var toDoElements: [ToDoElement] = load("toDoData.json")
+//    @ObservedObject var taskStore = Tas
+    @State private var showFavoritesOnly = false
     @State private var isSet: Bool = false
     @State var showSheetView = false
 
@@ -18,29 +20,36 @@ struct RowsView: View {
         NavigationView{
             VStack{
                 List {
+                    Toggle(isOn: $showFavoritesOnly) {
+                                       Text("Archive")
+                                   }
                     ForEach(toDoElements.indices, id: \.self) { index in
                         HStack {
                             Text(toDoElements[index].description)
                                 .strikethrough(toDoElements[index].isDone)
-
                             Spacer()
                             CheckButton(isSet: $toDoElements[index].isDone)
-                            
-                            
                         }
+                        
                     }
+                    .onDelete(perform: self.delete)
                 }
+                
                 .listStyle(GroupedListStyle())
             }
             .navigationTitle("To Do List")
-            .navigationBarItems(trailing: buttonAdd)
+            .navigationBarItems(leading: EditButton(), trailing: buttonAdd)
             .sheet(isPresented: $showSheetView) {
                 SheetView(showSheetView: self.$showSheetView, addnewtodo: self.$toDoElements)
             }
         }
-        
-        .padding(0.0)
-        
+                .padding(0.0)
+    }
+//    func delete(at offsets : IndexSet) {
+//        toDoElements.remove(atOffsets: offsets)
+//    }
+    func delete(at offsets : IndexSet) {
+        toDoElements.remove(atOffsets: offsets)
     }
 }
 
