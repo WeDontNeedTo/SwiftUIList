@@ -1,8 +1,10 @@
 import SwiftUI
 
 struct MainView: View {
+    //@State var toDoElementss: [ToDoElement] = load("toDoData.json")
     var body: some View {
         TabView {
+            
             ContentView()
                 .tabItem {
                     Label("Main", systemImage:

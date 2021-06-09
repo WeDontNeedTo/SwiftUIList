@@ -34,13 +34,6 @@ struct ToDoList: View {
                     }
                 }
                 .listStyle(GroupedListStyle())
-//                List(toDoElements, id: \.id){ toDoElement in
-//                    Text(toDoElement.description)
-//                        .strikethrough(toDoElement.isDone)
-//                    Spacer()
-//                   // CheckButton(isSet: $toDoElement.isDone)
-//
-//                }
             }
             .navigationTitle("To Do List")
             .navigationBarItems(trailing: buttonAdd)

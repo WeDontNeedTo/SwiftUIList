@@ -58,6 +58,7 @@
 				6B7ECBC6265E7973009F799D /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		6B7ECBC6265E7973009F799D /* Products */ = {
 			isa = PBXGroup;
@@ -313,6 +314,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDobacedOnGuide/Preview Content\"";
+				DEVELOPMENT_TEAM = H6B86YYVQ7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ToDobacedOnGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -320,7 +322,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Garpix.ToDobacedOnGuide;
+				PRODUCT_BUNDLE_IDENTIFIER = Garpix.ToDobacedOnGuide.Artur;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -334,6 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDobacedOnGuide/Preview Content\"";
+				DEVELOPMENT_TEAM = H6B86YYVQ7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ToDobacedOnGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -341,7 +344,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Garpix.ToDobacedOnGuide;
+				PRODUCT_BUNDLE_IDENTIFIER = Garpix.ToDobacedOnGuide.Artur;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
