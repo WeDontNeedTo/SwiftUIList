@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 
-struct TrashView: View {
+struct Trash: View {
     var body: some View {
         NavigationView{
             VStack{
@@ -15,6 +15,6 @@ struct TrashView: View {
 
 struct TrashView_Previews: PreviewProvider {
     static var previews: some View {
-        TrashView()
+        Trash()
     }
 }

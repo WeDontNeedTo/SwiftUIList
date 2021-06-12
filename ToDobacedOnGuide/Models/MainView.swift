@@ -15,7 +15,7 @@ struct MainView: View {
                     Label("Archeve", systemImage:
                           "archivebox")
                 }
-            TrashView()
+            Trash()
                 .tabItem {
                     Label("Trash", systemImage:
                           "trash")

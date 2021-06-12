@@ -6,9 +6,6 @@ struct ToDoList: View {
     @State private var isSet: Bool = false
     @State var showSheetView = false
 
-//    var toDoElement: ToDoElement
-//    @State var someArray:[ToDoElement]=[ToDoElement(id: 0, isDone: false, description: "Покушать"), ToDoElement(id: 1, isDone: true, description: "Погулять"), ToDoElement(id: 2, isDone: false, description: "Найти себя"),ToDoElement(id: 3, isDone: true, description: "Получить диплом"),]
-
     var buttonAdd: some View {
         HStack{
             Button(action: {self.showSheetView.toggle()}, label: {
