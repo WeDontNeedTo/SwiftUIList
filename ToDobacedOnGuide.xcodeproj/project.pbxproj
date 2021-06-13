@@ -54,6 +54,7 @@
 		2367E938267554E8008740ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6B7ECBC8265E7973009F799D /* ToDobacedOnGuideApp.swift */,
 				6B7ECBE6265E851A009F799D /* ToDoList.swift */,
 				6B7ECBCA265E7973009F799D /* ContentView.swift */,
 				6B8DDD7726667A07007B9209 /* MainView.swift */,
@@ -105,7 +106,6 @@
 				2367E939267554FA008740ED /* Components */,
 				2367E938267554E8008740ED /* Models */,
 				6B8DDD6E266662BF007B9209 /* Resources */,
-				6B7ECBC8265E7973009F799D /* ToDobacedOnGuideApp.swift */,
 				6B7ECBCC265E7975009F799D /* Assets.xcassets */,
 				6B7ECBD1265E7975009F799D /* Info.plist */,
 				6B7ECBCE265E7975009F799D /* Preview Content */,
