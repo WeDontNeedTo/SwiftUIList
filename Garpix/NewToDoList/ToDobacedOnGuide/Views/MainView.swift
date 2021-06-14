@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject var tasks: TaskList
     var body: some View {
         TabView {
-            RowsView()
+            RowsView(tasks: TaskList())
                 .tabItem{
                     Label("Home",systemImage: "house")
                 }
-            Archive()
+            Archive(tasks: TaskList())
                 .tabItem{
                     Label("Archive",systemImage: "archivebox")
                 }
-            Trash()
+            Trash(tasks: TaskList())
                 .tabItem{
                     Label("Trash",systemImage: "trash")
                 }
@@ -27,7 +28,7 @@ struct MainView: View {
 }
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(tasks: TaskList())
     }
 }
 

@@ -1,5 +1,4 @@
 import SwiftUI
-import Combine
 struct CheckButton: View {
     @Binding var isSet: Bool
     var body: some View {

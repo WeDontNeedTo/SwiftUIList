@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct Archive: View {
+    @ObservedObject var tasks: TaskList
     var body: some View {
         NavigationView {
             VStack {
-                Text("Completed tasks")
+                
             }
             .navigationTitle("Archive")
         }
@@ -20,6 +21,6 @@ struct Archive: View {
 
 struct Archive_Previews: PreviewProvider {
     static var previews: some View {
-        Archive()
+        Archive(tasks: TaskList())
     }
 }

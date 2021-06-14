@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Trash: View {
+    @State var showAddToDo = false
+    @ObservedObject var tasks: TaskList
     var body: some View {
         NavigationView {
             VStack {
@@ -20,6 +22,6 @@ struct Trash: View {
 
 struct Trash_Previews: PreviewProvider {
     static var previews: some View {
-        Trash()
+        Trash(tasks: TaskList())
     }
 }

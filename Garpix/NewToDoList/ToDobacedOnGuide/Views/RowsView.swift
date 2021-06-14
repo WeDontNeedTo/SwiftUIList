@@ -1,14 +1,13 @@
 import SwiftUI
-import Combine
 // Here is state
 struct RowsView: View {
-    @State var toDoElements: [ToDoElement] = load("tasksData.json")
-    @State private var isSet: Bool = false
-    @State var showSheetView = false
+    @ObservedObject var tasks : TaskList
+    @State var isSet: Bool = false
+    @State var showAddToDo = false
     
     var buttonAdd: some View {
         HStack{
-            Button(action: {self.showSheetView.toggle()}, label: {
+            Button(action: {self.showAddToDo.toggle()}, label: {
                 Image(systemName: "square.and.pencil")
                     .foregroundColor(.yellow)
                 
@@ -19,34 +18,38 @@ struct RowsView: View {
         NavigationView{
             VStack{
                 List {
-                    ForEach(toDoElements.indices, id: \.self) { index in
-                        HStack {
-                            Text(toDoElements[index].description)
-                                .strikethrough(toDoElements[index].isDone)
-                            
-                            Spacer()
-                          CheckButton(isSet: $toDoElements[index].isDone)
-                            
+                    ForEach(tasks.toDoElements.indices, id: \.self) { index in
+                        if (!tasks.toDoElements[index].isDeleted &&
+                                !tasks.toDoElements[index].isArchived){
+                            HStack {
+                                Text(tasks.toDoElements[index].description)
+                                    .strikethrough(tasks.toDoElements[index].isDone)
+                                Spacer()
+                                CheckButton(isSet: $tasks.toDoElements[index].isDone
+                                )
+                                
+                            }
                         }
+                        
                     }
+                    .onDelete(perform: { indexSet in
+                        let index = indexSet[indexSet.startIndex]
+                        tasks.toDoElements[index].isDeleted.toggle()
+                    })
                 }
                 .listStyle(GroupedListStyle())
             }
             .navigationTitle("To Do List")
             .navigationBarItems(trailing: buttonAdd)
-            .sheet(isPresented: $showSheetView){
-               SheetView(showSheetView: self.$showSheetView, addnewtodo: self.$toDoElements)
+            .sheet(isPresented: $showAddToDo){
+                AddToDo(showAddToDo: self.$showAddToDo, addnewtodo: self.$tasks.toDoElements)
             }
         }
-        
-        .padding(0.0)
-        
     }
-    func delete()
 }
 
 struct RowsView_Previews: PreviewProvider {
     static var previews: some View {
-        RowsView()
+        RowsView(tasks: TaskList())
     }
 }

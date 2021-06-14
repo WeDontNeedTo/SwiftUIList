@@ -1,15 +1,14 @@
 import SwiftUI
-import Combine
-struct SheetView: View {
-    @Binding var showSheetView: Bool
+struct AddToDo: View {
+    @Binding var showAddToDo: Bool
     @Binding var addnewtodo: [ToDoElement]
     @State var newTodo : String = ""
     var ToDoField: some View{
-          VStack{
-               TextField("enter your todo", text: self.$newTodo)
+        VStack{
+            TextField("enter your todo", text: self.$newTodo)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-          }
-               }
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -18,31 +17,29 @@ struct SheetView: View {
                     .padding()
                 Spacer()
             }
-            .navigationBarTitle(Text("Notifications"), displayMode: .inline)
+            .navigationBarTitle(Text("New Task"), displayMode: .inline)
             .navigationBarItems(leading: Button(action: {
-                    self.showSheetView = false
+                self.showAddToDo = false
                 
-                })
+            })
             {
-                    Text("Cancel").bold()
+                Text("Cancel").bold()
             },
             trailing: Button(action: {
-                addnewtodo.append(ToDoElement(id: addnewtodo.count + 1, isDone: true, description: newTodo))
+                addnewtodo.append(ToDoElement(id: addnewtodo.count + 1, isDone: true, description: newTodo, isDeleted: true, isArchived: true))
                 
-                self.showSheetView = false
+                self.showAddToDo = false
                 
             }, label: {
                 Text("Add")
             }))
-
+            
         }
     }
 }
 
-
-
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
-        SheetView(showSheetView: .constant(false), addnewtodo: .constant([]))
+        AddToDo(showAddToDo: .constant(false), addnewtodo: .constant([]))
     }
 }
