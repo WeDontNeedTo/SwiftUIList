@@ -2,9 +2,9 @@ import SwiftUI
 
 struct ToDoList: View {
     @ObservedObject var tasks: TaskList
-    @State private var isSet: Bool = false
+    @State var isSet: Bool = false
     @State var showSheetView = false
-
+    
     var buttonAdd: some View {
         HStack{
             Button(action: {self.showSheetView.toggle()}, label: {
@@ -18,16 +18,18 @@ struct ToDoList: View {
             VStack{
                 List {
                     ForEach(tasks.toDoElements.indices, id: \.self) { index in
-                        HStack {
-                            Text(tasks.toDoElements[index].description)
-                                .strikethrough(tasks.toDoElements[index].isDone)
-
-                            Spacer()
-                           // CheckButton(isSet: $toDoElements[index].isDone)
-                           // CheckButton(isSet: tasks.toDoElements[index].isDone)
-
-                        }
-                    }
+                        if (!tasks.toDoElements[index].isDeleted && !tasks.toDoElements[index].isArcheveted && !tasks.toDoElements[index].isDone) {
+                            HStack {
+                                Text(tasks.toDoElements[index].description)
+                                    .strikethrough(tasks.toDoElements[index].isDone)
+                                Spacer()
+                                CheckButton(isSet: $tasks.toDoElements[index].isDone)
+                            }
+                        } }
+                        .onDelete(perform: { indexSet in
+                            let index = indexSet[indexSet.startIndex]
+                            tasks.toDoElements[index].isDeleted.toggle()
+                        })
                 }
                 .listStyle(GroupedListStyle())
             }

@@ -4,23 +4,23 @@ struct MainView: View {
     @ObservedObject var tasks: TaskList
     var body: some View {
         TabView {
-           // if (tasks.toDoElements[index].isArcheveted)
+            // if (tasks.toDoElements[index].isArcheveted)
             ToDoList(tasks: TaskList())
                 .tabItem {
                     Label("Main", systemImage:
-                          "house")
+                            "house")
                 }
             Archive(tasks: TaskList())
                 .tabItem {
                     Label("Archeve", systemImage:
-                          "archivebox")
+                            "archivebox")
                 }
             Trash(tasks: TaskList())
                 .tabItem {
                     Label("Trash", systemImage:
-                          "trash")
+                            "trash")
                 }
-
+            
         }
     }
 }
