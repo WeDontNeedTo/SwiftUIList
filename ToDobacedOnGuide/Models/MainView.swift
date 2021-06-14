@@ -1,21 +1,21 @@
 import SwiftUI
 
 struct MainView: View {
-    //@State var toDoElementss: [ToDoElement] = load("toDoData.json")
+    @ObservedObject var tasks: TaskList
     var body: some View {
         TabView {
-            
-            ContentView()
+           // if (tasks.toDoElements[index].isArcheveted)
+            ToDoList(tasks: TaskList())
                 .tabItem {
                     Label("Main", systemImage:
                           "house")
                 }
-            Archive()
+            Archive(tasks: TaskList())
                 .tabItem {
                     Label("Archeve", systemImage:
                           "archivebox")
                 }
-            Trash()
+            Trash(tasks: TaskList())
                 .tabItem {
                     Label("Trash", systemImage:
                           "trash")
@@ -27,7 +27,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
-          //  .environmentObject(Archive())
+        MainView(tasks: TaskList())
     }
 }

@@ -4,7 +4,7 @@ import SwiftUI
 struct ToDobacedOnGuideApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(tasks: TaskList())
         }
     }
 }

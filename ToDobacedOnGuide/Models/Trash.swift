@@ -1,20 +1,30 @@
 import SwiftUI
-import Combine
 
 struct Trash: View {
+    @ObservedObject var tasks: TaskList
+    
     var body: some View {
+        
         NavigationView{
             VStack{
-                Text("Some text")
+                List{
+                    ForEach(tasks.toDoElements.indices, id: \.self) { index in
+                        if (tasks.toDoElements[index].isDeleted){
+                        HStack{
+                            Text(tasks.toDoElements[index].description)
+                            Spacer()
+                        }
+                        }
+                    }
+                }
             }
             .navigationTitle("Deleted ToDo")
         }
-        .padding(0.0)
     }
 }
 
 struct TrashView_Previews: PreviewProvider {
     static var previews: some View {
-        Trash()
+        Trash(tasks: TaskList())
     }
 }

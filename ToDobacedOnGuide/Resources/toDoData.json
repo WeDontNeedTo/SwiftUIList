@@ -1,9 +1,9 @@
 [{
         "id": 0,
-        "isDone": false,
+        "isDone": true,
         "description": "Артур",
         "isDeleted": false,
-        "isArcheveted": false
+        "isArcheveted": true
     },
     {
         "id": 1,
@@ -14,9 +14,9 @@
     },
     {
         "id": 2,
-        "isDone": true,
+        "isDone": false,
         "description": "Калич",
-        "isDeleted": false,
+        "isDeleted": true,
         "isArcheveted": false
     },
     {

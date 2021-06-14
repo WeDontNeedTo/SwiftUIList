@@ -1,39 +1,29 @@
 import SwiftUI
-import Combine
 
 struct Archive: View {
-    @State var toDoElements: [ToDoElement] = load("toDoData.json")
-    //@ObservedObject var toDoElements: ToDoElement
-   // @State private var isSet: Bool = false
-    //@ObservedObject var isSet: Bool
-    
+    @ObservedObject var tasks: TaskList
     var body: some View {
         NavigationView{
             VStack{
-                List {
-                    ForEach(toDoElements.indices, id: \.self) { index in
-                        if (toDoElements[index].isArcheveted){
-                        HStack {
-                                Text(toDoElements[index].description)
-                                    .strikethrough()
+                List{
+                    ForEach(tasks.toDoElements.indices, id: \.self) { index in
+                        if (tasks.toDoElements[index].isArcheveted){
+                        HStack{
+                            Text(tasks.toDoElements[index].description)
                             Spacer()
-                            CheckButton(isSet: $toDoElements[index].isDone)
-
                         }
                     }
-                    }
                 }
-                .listStyle(GroupedListStyle())
             }
-            .navigationTitle("Archeve")
+            .listStyle(GroupedListStyle())
         }
-        .padding(0.0)
+            .navigationTitle("Archeve")
     }
-    
+}
 }
 
 struct Archive_Previews: PreviewProvider {
     static var previews: some View {
-        Archive()
+        Archive(tasks: TaskList())
     }
 }

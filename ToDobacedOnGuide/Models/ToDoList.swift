@@ -1,8 +1,7 @@
 import SwiftUI
-import Combine
 
 struct ToDoList: View {
-    @State var toDoElements: [ToDoElement] = load("toDoData.json")
+    @ObservedObject var tasks: TaskList
     @State private var isSet: Bool = false
     @State var showSheetView = false
 
@@ -15,17 +14,17 @@ struct ToDoList: View {
         }
     }
     var body: some View {
-
         NavigationView{
             VStack{
                 List {
-                    ForEach(toDoElements.indices, id: \.self) { index in
+                    ForEach(tasks.toDoElements.indices, id: \.self) { index in
                         HStack {
-                            Text(toDoElements[index].description)
-                                .strikethrough(toDoElements[index].isDone)
+                            Text(tasks.toDoElements[index].description)
+                                .strikethrough(tasks.toDoElements[index].isDone)
 
                             Spacer()
-                            CheckButton(isSet: $toDoElements[index].isDone)
+                           // CheckButton(isSet: $toDoElements[index].isDone)
+                           // CheckButton(isSet: tasks.toDoElements[index].isDone)
 
                         }
                     }
@@ -35,7 +34,7 @@ struct ToDoList: View {
             .navigationTitle("To Do List")
             .navigationBarItems(trailing: buttonAdd)
             .sheet(isPresented: $showSheetView){
-                AddToDoPage(showSheetView: self.$showSheetView, addnewtodo: self.$toDoElements)
+                AddToDoPage(showSheetView: self.$showSheetView, tasks: TaskList())
             }
         }
         .padding(0.0)
@@ -44,6 +43,6 @@ struct ToDoList: View {
 
 struct RowsView_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoList()
+        ToDoList(tasks: TaskList())
     }
 }

@@ -1,9 +1,8 @@
 import SwiftUI
-import Combine
 
 struct AddToDoPage: View {
     @Binding var showSheetView: Bool
-    @Binding var addnewtodo: [ToDoElement]
+    @ObservedObject var tasks: TaskList
     @State var newTodo : String = ""
     
     var ToDoField: some View{
@@ -28,12 +27,15 @@ struct AddToDoPage: View {
                     Text("Cancel").bold()
             },
             trailing: Button(action: {
-                addnewtodo.append(ToDoElement(id: addnewtodo.count + 1, isDone: false, description: newTodo, isDeleted: false, isArcheveted: false))
+                tasks.toDoElements.append(ToDoElement(id: tasks.toDoElements.count + 1, isDone: false, description: newTodo, isDeleted: false, isArcheveted: false)
+                )
+               // addnewtodo.toDoElements.append(ToDoElement(id: addnewtodo.toDoElements.count + 1, isDone: false, description: newTodo, isDeleted: false, isArcheveted: false))
                 self.showSheetView = false
             }, label: {
                 Text("Add")
             }))
         }
+    
     }
 }
 
@@ -41,6 +43,6 @@ struct AddToDoPage: View {
 
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
-        AddToDoPage(showSheetView: .constant(false), addnewtodo: .constant([]))
+        AddToDoPage(showSheetView: .constant(false), tasks: TaskList())
     }
 }
