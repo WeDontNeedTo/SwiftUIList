@@ -1,5 +1,4 @@
 import SwiftUI
-// Here is state
 struct RowsView: View {
     @ObservedObject var tasks : TaskList
     @State var isSet: Bool = false
@@ -10,7 +9,6 @@ struct RowsView: View {
             Button(action: {self.showAddToDo.toggle()}, label: {
                 Image(systemName: "square.and.pencil")
                     .foregroundColor(.yellow)
-                
             })
         }
     }
@@ -23,11 +21,10 @@ struct RowsView: View {
                                 !tasks.toDoElements[index].isArchived){
                             HStack {
                                 Text(tasks.toDoElements[index].description)
-                                    .strikethrough(tasks.toDoElements[index].isDone)
+                                    .strikethrough(tasks.toDoElements[index].isArchived)
                                 Spacer()
-                                CheckButton(isSet: $tasks.toDoElements[index].isDone
+                                CheckButton(isSet: $tasks.toDoElements[index].isArchived
                                 )
-                                
                             }
                         }
                         

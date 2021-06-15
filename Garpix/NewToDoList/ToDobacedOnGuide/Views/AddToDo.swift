@@ -26,9 +26,8 @@ struct AddToDo: View {
                 Text("Cancel").bold()
             },
             trailing: Button(action: {
-                addnewtodo.append(ToDoElement(id: addnewtodo.count + 1, isDone: true, description: newTodo, isDeleted: true, isArchived: true))
-                
-                self.showAddToDo = false
+                addnewtodo.append(ToDoElement(id: addnewtodo.count + 1, description: newTodo, isDeleted: false, isArchived: false))
+                                self.showAddToDo = false
                 
             }, label: {
                 Text("Add")

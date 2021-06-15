@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var selectedTab = 0
     @ObservedObject var tasks: TaskList
     var body: some View {
-        TabView {
-            RowsView(tasks: TaskList())
-                .tabItem{
-                    Label("Home",systemImage: "house")
-                }
+        TabView (selection: $selectedTab) {
             Archive(tasks: TaskList())
                 .tabItem{
                     Label("Archive",systemImage: "archivebox")
                 }
+                .tag(1)
+            RowsView (tasks: TaskList())
+                .tabItem{
+                    Label("Home",systemImage: "house")
+                }
+                .tag(0)
             Trash(tasks: TaskList())
                 .tabItem{
                     Label("Trash",systemImage: "trash")
                 }
+                .tag(2)
         }
     }
 }
