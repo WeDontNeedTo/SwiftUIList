@@ -7,12 +7,14 @@ struct Archive: View {
             VStack{
                 List{
                     ForEach(tasks.toDoElements.indices, id: \.self) { index in
+                        //Toggle(isOn: $tasks.toDoElements[index].isArcheveted)
                         if (tasks.toDoElements[index].isArcheveted && !tasks.toDoElements[index].isDeleted){
                         HStack{
                             Text(tasks.toDoElements[index].description)
-                                .strikethrough(tasks.toDoElements[index].isDone)
+                                .strikethrough(tasks.toDoElements[index].isArcheveted)
                             Spacer()
-                            CheckButton(isSet: $tasks.toDoElements[index].isDone)    
+                            CheckButton(isSet: $tasks.toDoElements[index].isArcheveted)
+                            
                         }
                     }
                 }
@@ -22,6 +24,7 @@ struct Archive: View {
                     })
             }
             .listStyle(GroupedListStyle())
+                Text("kinda \(tasks.toDoElements.count)")
         }
             .navigationTitle("Archeve")
     }

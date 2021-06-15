@@ -13,14 +13,14 @@ struct Trash: View {
                             HStack{
                                 Text(tasks.toDoElements[index].description)
                                 Spacer()
-                                CheckButton(isSet: $tasks.toDoElements[index].isDone)
+                                CheckButton(isSet: $tasks.toDoElements[index].isArcheveted)
                             }
                         }
                     }
                 }
                 .listStyle(GroupedListStyle())
             }
-            .navigationTitle("Deleted ToDo")
+            .navigationTitle("Deleted")
         }
     }
 }

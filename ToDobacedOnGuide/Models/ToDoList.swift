@@ -18,25 +18,28 @@ struct ToDoList: View {
             VStack{
                 List {
                     ForEach(tasks.toDoElements.indices, id: \.self) { index in
-                        if (!tasks.toDoElements[index].isDeleted && !tasks.toDoElements[index].isArcheveted && !tasks.toDoElements[index].isDone) {
+                        if (!tasks.toDoElements[index].isDeleted && !tasks.toDoElements[index].isArcheveted) {
                             HStack {
                                 Text(tasks.toDoElements[index].description)
-                                    .strikethrough(tasks.toDoElements[index].isDone)
+                                    .strikethrough(tasks.toDoElements[index].isArcheveted)
                                 Spacer()
-                                CheckButton(isSet: $tasks.toDoElements[index].isDone)
+                                CheckButton(isSet: $tasks.toDoElements[index].isArcheveted)
                             }
-                        } }
-                        .onDelete(perform: { indexSet in
-                            let index = indexSet[indexSet.startIndex]
-                            tasks.toDoElements[index].isDeleted.toggle()
-                        })
+                        }
+                        
+                    }
+                    .onDelete(perform: { indexSet in
+                        let index = indexSet[indexSet.startIndex]
+                        tasks.toDoElements[index].isDeleted.toggle()
+                    })
                 }
                 .listStyle(GroupedListStyle())
+                Text("kinda \(tasks.toDoElements.count)")
             }
             .navigationTitle("To Do List")
             .navigationBarItems(trailing: buttonAdd)
             .sheet(isPresented: $showSheetView){
-                AddToDoPage(showSheetView: self.$showSheetView, tasks: TaskList())
+                AddToDoPage(showSheetView: self.$showSheetView, addnewtodo: self.$tasks.toDoElements)
             }
         }
         .padding(0.0)

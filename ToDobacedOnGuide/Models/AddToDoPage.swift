@@ -2,7 +2,7 @@ import SwiftUI
 
 struct AddToDoPage: View {
     @Binding var showSheetView: Bool
-    @StateObject var tasks: TaskList
+    @Binding var addnewtodo:[ToDoElement]
     @State var newTodo : String = ""
     
     var ToDoField: some View{
@@ -18,7 +18,7 @@ struct AddToDoPage: View {
                 ToDoField
                     .padding()
                 Spacer()
-                Text(tasks.toDoElements[tasks.toDoElements.count-1].description)
+                //Text(tasks.toDoElements[tasks.toDoElements.count-1].description)
             }
             .navigationBarTitle(Text("New ToDo"), displayMode: .inline)
             .navigationBarItems(leading: Button(action: {
@@ -28,9 +28,7 @@ struct AddToDoPage: View {
                 Text("Cancel").bold()
             },
             trailing: Button(action: {
-                tasks.toDoElements.append(ToDoElement(id: tasks.toDoElements.count + 1, isDone: false, description: newTodo, isDeleted: false, isArcheveted: false)
-                )
-                // addnewtodo.toDoElements.append(ToDoElement(id: addnewtodo.toDoElements.count + 1, isDone: false, description: newTodo, isDeleted: false, isArcheveted: false))
+                addnewtodo.append (ToDoElement(id: addnewtodo.count + 1, description: newTodo, isDeleted: false, isArcheveted: false))
                 self.showSheetView = false
             }, label: {
                 Text("Add")
@@ -45,6 +43,6 @@ struct AddToDoPage: View {
 
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
-        AddToDoPage(showSheetView: .constant(false), tasks: TaskList())
+        AddToDoPage(showSheetView: .constant(false), addnewtodo: .constant([]))
     }
 }

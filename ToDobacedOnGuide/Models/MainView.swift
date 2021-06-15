@@ -20,8 +20,8 @@ struct MainView: View {
                     Label("Trash", systemImage:
                             "trash")
                 }
-            
         }
+        
     }
 }
 
