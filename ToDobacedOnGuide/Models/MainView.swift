@@ -1,21 +1,20 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var tasks: TaskList
+    @StateObject var tasks = TaskList()
     var body: some View {
         TabView {
-            // if (tasks.toDoElements[index].isArcheveted)
-            ToDoList(tasks: TaskList())
+            ToDoList(tasks: tasks)
                 .tabItem {
                     Label("Main", systemImage:
                             "house")
                 }
-            Archive(tasks: TaskList())
+            Archive(tasks: tasks)
                 .tabItem {
                     Label("Archeve", systemImage:
                             "archivebox")
                 }
-            Trash(tasks: TaskList())
+            Trash(tasks: tasks)
                 .tabItem {
                     Label("Trash", systemImage:
                             "trash")

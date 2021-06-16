@@ -34,7 +34,6 @@ struct ToDoList: View {
                     })
                 }
                 .listStyle(GroupedListStyle())
-                Text("kinda \(tasks.toDoElements.count)")
             }
             .navigationTitle("To Do List")
             .navigationBarItems(trailing: buttonAdd)

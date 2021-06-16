@@ -7,7 +7,6 @@ struct Archive: View {
             VStack{
                 List{
                     ForEach(tasks.toDoElements.indices, id: \.self) { index in
-                        //Toggle(isOn: $tasks.toDoElements[index].isArcheveted)
                         if (tasks.toDoElements[index].isArcheveted && !tasks.toDoElements[index].isDeleted){
                         HStack{
                             Text(tasks.toDoElements[index].description)
@@ -24,9 +23,8 @@ struct Archive: View {
                     })
             }
             .listStyle(GroupedListStyle())
-                Text("kinda \(tasks.toDoElements.count)")
         }
-            .navigationTitle("Archeve")
+            .navigationTitle("Done")
     }
 }
 }
