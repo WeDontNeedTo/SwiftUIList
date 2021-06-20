@@ -41,7 +41,6 @@ struct ToDoList: View {
                 AddToDoPage(showSheetView: self.$showSheetView, addnewtodo: self.$tasks.toDoElements)
             }
         }
-        .padding(0.0)
     }
 }
 

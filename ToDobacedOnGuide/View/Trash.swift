@@ -3,8 +3,9 @@ import SwiftUI
 struct Trash: View {
     @ObservedObject var tasks: TaskList
     @State var isSet: Bool = false
-//    @State private var isLongPressed = false
-//    @GestureState private var isLongPressing = false
+    @State private var showActionSheet = false
+    @State var idOfTask: Int = 0
+    @State var isDeleted: Bool = true
     var body: some View {
         
         NavigationView{
@@ -16,8 +17,7 @@ struct Trash: View {
                                 Text(tasks.toDoElements[index].description)
                                     .strikethrough(tasks.toDoElements[index].isArcheveted)
                                 Spacer()
-                                CheckButton(isSet: $tasks.toDoElements[index].isArcheveted)
-
+                                ActionTrashButton(isSet: $tasks.toDoElements[index].isArcheveted, isDeleted: $tasks.toDoElements[index].isDeleted, showActionSheet: $showActionSheet, tasks: TaskList(), idOfTask: $tasks.toDoElements[index].id)
                             }
                         }
                     }
@@ -33,9 +33,5 @@ struct TrashView_Previews: PreviewProvider {
     static var previews: some View {
         Trash(tasks: TaskList())
     }
+    
 }
-
-//.gesture(LongPressGesture(minimumDuration: 1.0, maximumDistance: 400)
-//            .onEnded({(_) in self.isLongPressed.toggle()})
-//            .updating($isLongPressing) {value, state, _ in state=value}
-//)

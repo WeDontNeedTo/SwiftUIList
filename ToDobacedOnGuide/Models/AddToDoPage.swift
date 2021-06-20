@@ -39,8 +39,6 @@ struct AddToDoPage: View {
     }
 }
 
-
-
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
         AddToDoPage(showSheetView: .constant(false), addnewtodo: .constant([]))
