@@ -17,7 +17,7 @@ struct Trash: View {
                                 Text(tasks.toDoElements[index].description)
                                     .strikethrough(tasks.toDoElements[index].isArcheveted)
                                 Spacer()
-                                ActionTrashButton(isSet: $tasks.toDoElements[index].isArcheveted, isDeleted: $tasks.toDoElements[index].isDeleted, showActionSheet: $showActionSheet, tasks: TaskList(), idOfTask: $tasks.toDoElements[index].id)
+                                ActionTrashButton(isSet: $tasks.toDoElements[index].isArcheveted, isDeleted: $tasks.toDoElements[index].isDeleted, showActionSheet: $showActionSheet, tasks: tasks, idOfTask: index)
                             }
                         }
                     }

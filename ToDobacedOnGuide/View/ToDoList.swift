@@ -9,7 +9,10 @@ struct ToDoList: View {
         HStack{
             Button(action: {self.showSheetView.toggle()}, label: {
                 Image(systemName: "square.and.pencil")
+                    .resizable()
                     .foregroundColor(.yellow)
+                    .frame(width: 23, height: 23, alignment: .center)
+
             })
         }
     }
@@ -35,7 +38,7 @@ struct ToDoList: View {
                 }
                 .listStyle(GroupedListStyle())
             }
-            .navigationTitle("To Do List")
+            .navigationTitle("Notes")
             .navigationBarItems(trailing: buttonAdd)
             .sheet(isPresented: $showSheetView){
                 AddToDoPage(showSheetView: self.$showSheetView, addnewtodo: self.$tasks.toDoElements)

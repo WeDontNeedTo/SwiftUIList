@@ -8,6 +8,7 @@ struct CheckButton: View {
         }) {
             Image(systemName: isSet ? "checkmark.circle" : "checkmark.circle.fill")
                 .foregroundColor(.yellow)
+
         }
     }
 }

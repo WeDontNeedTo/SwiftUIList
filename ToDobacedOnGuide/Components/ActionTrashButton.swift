@@ -5,7 +5,7 @@ struct ActionTrashButton: View {
     @Binding var isDeleted: Bool
     @Binding var showActionSheet: Bool
     @ObservedObject var tasks: TaskList
-    @Binding var idOfTask: Int
+    var idOfTask: Int
     
     var body: some View {
         Button(action: {
@@ -19,6 +19,8 @@ struct ActionTrashButton: View {
                     isDeleted.toggle()
                 }),
                 ActionSheet.Button.destructive(Text("Удалить"), action: {
+                    tasks.toDoElements.remove(at: idOfTask)
+                    //print(idOfTask)
                 }),
                 ActionSheet.Button.cancel()
             ] ) }
@@ -27,6 +29,6 @@ struct ActionTrashButton: View {
 
 struct ActionTrashButton_Previews: PreviewProvider {
     static var previews: some View {
-        ActionTrashButton(isSet: .constant(false), isDeleted: .constant(false), showActionSheet: .constant(false), tasks: TaskList(), idOfTask: .constant(0))
+        ActionTrashButton(isSet: .constant(false), isDeleted: .constant(false), showActionSheet: .constant(false), tasks: TaskList(), idOfTask: 0)
     }
 }

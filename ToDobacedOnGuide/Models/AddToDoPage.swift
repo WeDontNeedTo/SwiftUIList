@@ -7,7 +7,7 @@ struct AddToDoPage: View {
     
     var ToDoField: some View{
         VStack{
-            TextField("enter your todo", text: $newTodo)
+            TextField("enter note here", text: $newTodo)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
         }
     }
@@ -18,9 +18,8 @@ struct AddToDoPage: View {
                 ToDoField
                     .padding()
                 Spacer()
-                //Text(tasks.toDoElements[tasks.toDoElements.count-1].description)
             }
-            .navigationBarTitle(Text("New ToDo"), displayMode: .inline)
+            .navigationBarTitle(Text("New Note"), displayMode: .inline)
             .navigationBarItems(leading: Button(action: {
                 self.showSheetView = false
             })

@@ -6,17 +6,17 @@ struct MainView: View {
         TabView {
             ToDoList(tasks: tasks)
                 .tabItem {
-                    Label("Main", systemImage:
+                    Label("Notes", systemImage:
                             "house")
                 }
             Archive(tasks: tasks)
                 .tabItem {
-                    Label("Archeve", systemImage:
+                    Label("Done", systemImage:
                             "archivebox")
                 }
             Trash(tasks: tasks)
                 .tabItem {
-                    Label("Trash", systemImage:
+                    Label("Deleted", systemImage:
                             "trash")
                 }
         }
