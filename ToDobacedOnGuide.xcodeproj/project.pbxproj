@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23363E4D267F464A00FF26A3 /* ActionTrashButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23363E4C267F464A00FF26A3 /* ActionTrashButton.swift */; };
+		2342F3B82685180B00C4E72D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2342F3B72685180B00C4E72D /* GoogleService-Info.plist */; };
 		2367E98026769BF3008740ED /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2367E97F26769BF3008740ED /* TaskList.swift */; };
 		6B7ECBC9265E7973009F799D /* ToDobacedOnGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7ECBC8265E7973009F799D /* ToDobacedOnGuideApp.swift */; };
 		6B7ECBCD265E7975009F799D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7ECBCC265E7975009F799D /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		23363E4C267F464A00FF26A3 /* ActionTrashButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTrashButton.swift; sourceTree = "<group>"; };
+		2342F3B72685180B00C4E72D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2367E97F26769BF3008740ED /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 		6B7ECBC5265E7973009F799D /* ToDobacedOnGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDobacedOnGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7ECBC8265E7973009F799D /* ToDobacedOnGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDobacedOnGuideApp.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				6B8DDD6E266662BF007B9209 /* Resources */,
 				6B7ECBCC265E7975009F799D /* Assets.xcassets */,
 				6B7ECBD1265E7975009F799D /* Info.plist */,
+				2342F3B72685180B00C4E72D /* GoogleService-Info.plist */,
 				6B7ECBCE265E7975009F799D /* Preview Content */,
 			);
 			path = ToDobacedOnGuide;
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B7ECBD0265E7975009F799D /* Preview Assets.xcassets in Resources */,
+				2342F3B82685180B00C4E72D /* GoogleService-Info.plist in Resources */,
 				6B7ECBCD265E7975009F799D /* Assets.xcassets in Resources */,
 				6B8DDD6C26666281007B9209 /* toDoData.json in Resources */,
 			);

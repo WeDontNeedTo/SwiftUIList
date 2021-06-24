@@ -20,7 +20,7 @@ struct ActionTrashButton: View {
                 }),
                 ActionSheet.Button.destructive(Text("Удалить"), action: {
                     tasks.toDoElements.remove(at: idOfTask)
-                    //print(idOfTask)
+                    print("в обычной \(tasks.toDoElements.count) и id \(idOfTask)")
                 }),
                 ActionSheet.Button.cancel()
             ] ) }

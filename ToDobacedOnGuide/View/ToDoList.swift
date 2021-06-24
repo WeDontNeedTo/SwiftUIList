@@ -35,6 +35,7 @@ struct ToDoList: View {
                         let index = indexSet[indexSet.startIndex]
                         tasks.toDoElements[index].isDeleted.toggle()
                     })
+                    
                 }
                 .listStyle(GroupedListStyle())
             }

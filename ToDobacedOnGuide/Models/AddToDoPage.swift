@@ -28,6 +28,7 @@ struct AddToDoPage: View {
             },
             trailing: Button(action: {
                 addnewtodo.append (ToDoElement(id: addnewtodo.count + 1, description: newTodo, isDeleted: false, isArcheveted: false))
+                print("в нью \(addnewtodo.count)")
                 self.showSheetView = false
             }, label: {
                 Text("Add")
