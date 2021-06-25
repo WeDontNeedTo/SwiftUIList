@@ -23,8 +23,7 @@ struct RowsView: View {
                                 Text(tasks.toDoElements[index].description)
                                     .strikethrough(tasks.toDoElements[index].isArchived)
                                 Spacer()
-                                CheckButton(isSet: $tasks.toDoElements[index].isArchived
-                                )
+                                CheckButton(isSet: $tasks.toDoElements[index].isArchived)
                             }
                         }
                         

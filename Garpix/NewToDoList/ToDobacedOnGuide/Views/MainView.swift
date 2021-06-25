@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var tasks = TaskList()
     @State private var selectedTab = 0
-    @ObservedObject var tasks: TaskList
     var body: some View {
         TabView (selection: $selectedTab) {
-            Archive(tasks: TaskList())
+            Archive(tasks: tasks)
                 .tabItem{
                     Label("Archive",systemImage: "archivebox")
                 }
                 .tag(1)
-            RowsView (tasks: TaskList())
+            RowsView (tasks: tasks)
                 .tabItem{
                     Label("Home",systemImage: "house")
                 }
                 .tag(0)
-            Trash(tasks: TaskList())
+            Trash(tasks: tasks)
                 .tabItem{
                     Label("Trash",systemImage: "trash")
                 }

@@ -9,7 +9,6 @@ struct CheckButton: View {
                 .foregroundColor(.yellow)
         }
     }
-    
 }
 
 struct CheckButton_Previews: PreviewProvider {

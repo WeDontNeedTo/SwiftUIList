@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseAuth
 
 @main
+
 struct ToDobacedOnGuideApp: App {
     var body: some Scene {
         WindowGroup {
