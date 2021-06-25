@@ -1,0 +1,49 @@
+[{
+        "id": 0,
+        "description": "Макос",
+        "isDeleted": false,
+        "isArcheveted": false
+    },
+    {
+        "id": 1,
+        "description": "Диплом",
+        "isDeleted": true,
+        "isArcheveted": false
+    },
+    {
+        "id": 2,
+        "description": "Task1",
+        "isDeleted": true,
+        "isArcheveted": false
+    },
+    {
+        "id": 4,
+        "description": "Task2",
+        "isDeleted": true,
+        "isArcheveted": false
+    },
+    {
+        "id": 5,
+        "description": "Шмак",
+        "isDeleted": false,
+        "isArcheveted": false
+    },
+    {
+        "id": 6,
+        "description": "Пойти в магазин",
+        "isDeleted": false,
+        "isArcheveted": false
+    },
+    {
+        "id": 7,
+        "description": "Во",
+        "isDeleted": true,
+        "isArcheveted": false
+    },
+    {
+        "id": 8,
+        "description": "сдать айфор",
+        "isDeleted": false,
+        "isArcheveted": true
+    }
+]
