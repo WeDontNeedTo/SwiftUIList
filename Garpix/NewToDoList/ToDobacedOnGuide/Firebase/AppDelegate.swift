@@ -9,7 +9,7 @@ import UIKit
 import FirebaseCore
 import FirebaseAuth
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: NSObject, UIApplicationDelegate {
 
 
 
