@@ -19,6 +19,11 @@ struct MainView: View {
                     Label("Deleted", systemImage:
                             "trash")
                 }
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage:
+                            "gear")
+                }
         }
         
     }
