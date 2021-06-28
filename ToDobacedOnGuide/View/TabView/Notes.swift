@@ -1,9 +1,10 @@
 import SwiftUI
 
-struct ToDoList: View {
+struct Notes: View {
     @ObservedObject var tasks: TaskList
     @State var isSet: Bool = false
     @State var showSheetView = false
+    @State var text: String = ""
     
     var buttonAdd: some View {
         HStack{
@@ -20,6 +21,7 @@ struct ToDoList: View {
         NavigationView{
             VStack{
                 List {
+                    CustomSearchBar(text: $text)
                     ForEach(tasks.toDoElements.indices, id: \.self) { index in
                         if (!tasks.toDoElements[index].isDeleted && !tasks.toDoElements[index].isArcheveted) {
                             HStack {
@@ -42,7 +44,7 @@ struct ToDoList: View {
             .navigationTitle("Notes")
             .navigationBarItems(trailing: buttonAdd)
             .sheet(isPresented: $showSheetView){
-                AddToDoPage(showSheetView: self.$showSheetView, addnewtodo: self.$tasks.toDoElements)
+                AddToDoView(showSheetView: self.$showSheetView, addnewtodo: self.$tasks.toDoElements)
             }
         }
     }
@@ -50,6 +52,6 @@ struct ToDoList: View {
 
 struct RowsView_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoList(tasks: TaskList())
+        Notes(tasks: TaskList())
     }
 }

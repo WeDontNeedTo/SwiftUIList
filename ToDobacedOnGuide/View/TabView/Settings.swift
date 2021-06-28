@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
-struct SettingsView: View {
+struct Settings: View {
     var body: some View {
         NavigationView{
             VStack{
@@ -27,16 +27,18 @@ struct SettingsView: View {
                         NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
                     }, label: {
                         Text("Log Out")
+                            .foregroundColor(.red)
                     })
                 }
             }
             .navigationTitle("Settings")
+            
         }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        Settings()
     }
 }

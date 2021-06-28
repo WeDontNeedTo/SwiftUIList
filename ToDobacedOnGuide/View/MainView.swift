@@ -4,7 +4,7 @@ struct MainView: View {
     @StateObject var tasks = TaskList()
     var body: some View {
         TabView {
-            ToDoList(tasks: tasks)
+            Notes(tasks: tasks)
                 .tabItem {
                     Label("Notes", systemImage:
                             "house")
@@ -19,7 +19,7 @@ struct MainView: View {
                     Label("Deleted", systemImage:
                             "trash")
                 }
-            SettingsView()
+            Settings()
                 .tabItem {
                     Label("Settings", systemImage:
                             "gear")

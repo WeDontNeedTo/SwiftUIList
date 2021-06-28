@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AddToDoPage: View {
+struct AddToDoView: View {
     @Binding var showSheetView: Bool
     @Binding var addnewtodo:[ToDoElement]
     @State var newTodo : String = ""
@@ -41,6 +41,6 @@ struct AddToDoPage: View {
 
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
-        AddToDoPage(showSheetView: .constant(false), addnewtodo: .constant([]))
+        AddToDoView(showSheetView: .constant(false), addnewtodo: .constant([]))
     }
 }
