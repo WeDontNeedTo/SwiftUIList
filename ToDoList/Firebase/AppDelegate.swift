@@ -1,6 +1,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
+import Firebase
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -9,6 +10,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
         return true
     }
 

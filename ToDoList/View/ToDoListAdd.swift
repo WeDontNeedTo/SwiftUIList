@@ -16,6 +16,17 @@ struct ToDoList: View {
             })
         }
     }
+    var exitButton: some View {
+        Button(action: {
+                       UserDefaults.standard.set(false, forKey: "status")
+                       NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+                       
+                   }) {
+                       
+                       Image(systemName: "arrowshape.turn.up.backward.fill")
+                        .foregroundColor(.yellow)
+                }
+    }
     var body: some View {
         NavigationView{
             VStack{
@@ -40,7 +51,8 @@ struct ToDoList: View {
                 .listStyle(GroupedListStyle())
             }
             .navigationTitle("Notes")
-            .navigationBarItems(trailing: buttonAdd)
+            .navigationBarItems(leading: exitButton,
+                                trailing: buttonAdd)
             .sheet(isPresented: $showSheetView){
                 AddToDoPage(showSheetView: self.$showSheetView, addnewtodo: self.$tasks.toDoElements)
             }

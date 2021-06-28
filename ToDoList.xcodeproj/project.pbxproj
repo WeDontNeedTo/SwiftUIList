@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC07F3B226890376001E7127 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3B126890376001E7127 /* SignIn.swift */; };
+		BC07F3B42689041D001E7127 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3B32689041D001E7127 /* SignUp.swift */; };
+		BC07F3B626892EA6001E7127 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3B526892EA6001E7127 /* ViewController.swift */; };
 		BCD44FD32685489700D1F5D4 /* Pods_ToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12392363618886FEEADDC91D /* Pods_ToDoList.framework */; };
-		BCD44FD42685489700D1F5D4 /* Pods_ToDoList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12392363618886FEEADDC91D /* Pods_ToDoList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BCD450332687908A00D1F5D4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCD450322687908A00D1F5D4 /* GoogleService-Info.plist */; };
 		BCE5B09D268530340070BC2B /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5B09C268530340070BC2B /* ToDoListApp.swift */; };
 		BCE5B0A1268530350070BC2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE5B0A0268530350070BC2B /* Assets.xcassets */; };
 		BCE5B0A4268530350070BC2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE5B0A3268530350070BC2B /* Preview Assets.xcassets */; };
@@ -23,30 +26,18 @@
 		BCE5B0C1268532380070BC2B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5B0C0268532370070BC2B /* MainView.swift */; };
 		BCE5B0C3268532780070BC2B /* ToDoListAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5B0C2268532780070BC2B /* ToDoListAdd.swift */; };
 		BCE5B0C5268532990070BC2B /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5B0C4268532990070BC2B /* Trash.swift */; };
-		BCE5B0C7268532C80070BC2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5B0C6268532C80070BC2B /* ContentView.swift */; };
-		BCE5B0C92685341D0070BC2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE5B0C82685341D0070BC2B /* GoogleService-Info.plist */; };
+		BCE5B0C7268532C80070BC2B /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5B0C6268532C80070BC2B /* SignView.swift */; };
 		BCE5B0CB268536260070BC2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5B0CA268536260070BC2B /* AppDelegate.swift */; };
-		BCE5B0CD268536F50070BC2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5B0CC268536F50070BC2B /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		BCD44FD52685489700D1F5D4 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BCD44FD42685489700D1F5D4 /* Pods_ToDoList.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		10CD328FC1EDEBAB2C0AB005 /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 		12392363618886FEEADDC91D /* Pods_ToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FB1A8408864C7B328E383B /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
+		BC07F3B126890376001E7127 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		BC07F3B32689041D001E7127 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		BC07F3B526892EA6001E7127 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BCD450322687908A00D1F5D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCE5B099268530340070BC2B /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE5B09C268530340070BC2B /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		BCE5B0A0268530350070BC2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,10 +54,8 @@
 		BCE5B0C0268532370070BC2B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BCE5B0C2268532780070BC2B /* ToDoListAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListAdd.swift; sourceTree = "<group>"; };
 		BCE5B0C4268532990070BC2B /* Trash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trash.swift; sourceTree = "<group>"; };
-		BCE5B0C6268532C80070BC2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BCE5B0C82685341D0070BC2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BCE5B0C6268532C80070BC2B /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
 		BCE5B0CA268536260070BC2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BCE5B0CC268536F50070BC2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +87,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BCD45034268793DB00D1F5D4 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				BCE5B0CA268536260070BC2B /* AppDelegate.swift */,
+				BC07F3B526892EA6001E7127 /* ViewController.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		BCE5B090268530340070BC2B = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +117,7 @@
 		BCE5B09B268530340070BC2B /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				BCD45034268793DB00D1F5D4 /* Firebase */,
 				BCE5B0BD268532130070BC2B /* View */,
 				BCE5B0BA268531D00070BC2B /* Resources */,
 				BCE5B0B72685317F0070BC2B /* Models */,
@@ -126,7 +125,7 @@
 				BCE5B0AB268530810070BC2B /* Components */,
 				BCE5B0A0268530350070BC2B /* Assets.xcassets */,
 				BCE5B0A5268530350070BC2B /* Info.plist */,
-				BCE5B0C82685341D0070BC2B /* GoogleService-Info.plist */,
+				BCD450322687908A00D1F5D4 /* GoogleService-Info.plist */,
 				BCE5B0A2268530350070BC2B /* Preview Content */,
 			);
 			path = ToDoList;
@@ -155,8 +154,6 @@
 				BCE5B0B1268530F20070BC2B /* JsonConverter.swift */,
 				BCE5B0B32685310F0070BC2B /* TaskList.swift */,
 				BCE5B0B52685313B0070BC2B /* ToDoElement.swift */,
-				BCE5B0CA268536260070BC2B /* AppDelegate.swift */,
-				BCE5B0CC268536F50070BC2B /* SceneDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -164,7 +161,6 @@
 		BCE5B0B72685317F0070BC2B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BCE5B0B8268531910070BC2B /* AddToDoPage.swift */,
 				BCE5B09C268530340070BC2B /* ToDoListApp.swift */,
 			);
 			path = Models;
@@ -185,7 +181,10 @@
 				BCE5B0C0268532370070BC2B /* MainView.swift */,
 				BCE5B0C2268532780070BC2B /* ToDoListAdd.swift */,
 				BCE5B0C4268532990070BC2B /* Trash.swift */,
-				BCE5B0C6268532C80070BC2B /* ContentView.swift */,
+				BCE5B0C6268532C80070BC2B /* SignView.swift */,
+				BCE5B0B8268531910070BC2B /* AddToDoPage.swift */,
+				BC07F3B126890376001E7127 /* SignIn.swift */,
+				BC07F3B32689041D001E7127 /* SignUp.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,7 +201,6 @@
 				BCE5B096268530340070BC2B /* Frameworks */,
 				BCE5B097268530340070BC2B /* Resources */,
 				676E6EB770885B8C66B300EC /* [CP] Embed Pods Frameworks */,
-				BCD44FD52685489700D1F5D4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,7 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE5B0A4268530350070BC2B /* Preview Assets.xcassets in Resources */,
-				BCE5B0C92685341D0070BC2B /* GoogleService-Info.plist in Resources */,
+				BCD450332687908A00D1F5D4 /* GoogleService-Info.plist in Resources */,
 				BCE5B0BC268531E90070BC2B /* toDoData.json in Resources */,
 				BCE5B0A1268530350070BC2B /* Assets.xcassets in Resources */,
 			);
@@ -307,18 +305,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE5B0C5268532990070BC2B /* Trash.swift in Sources */,
-				BCE5B0CD268536F50070BC2B /* SceneDelegate.swift in Sources */,
-				BCE5B0C7268532C80070BC2B /* ContentView.swift in Sources */,
+				BCE5B0C7268532C80070BC2B /* SignView.swift in Sources */,
 				BCE5B0B9268531910070BC2B /* AddToDoPage.swift in Sources */,
 				BCE5B0BF2685321D0070BC2B /* Archive.swift in Sources */,
+				BC07F3B42689041D001E7127 /* SignUp.swift in Sources */,
 				BCE5B0B42685310F0070BC2B /* TaskList.swift in Sources */,
 				BCE5B0C1268532380070BC2B /* MainView.swift in Sources */,
 				BCE5B0B62685313B0070BC2B /* ToDoElement.swift in Sources */,
+				BC07F3B226890376001E7127 /* SignIn.swift in Sources */,
 				BCE5B0B2268530F20070BC2B /* JsonConverter.swift in Sources */,
 				BCE5B0CB268536260070BC2B /* AppDelegate.swift in Sources */,
 				BCE5B0AD268530920070BC2B /* ActionTrashButton.swift in Sources */,
 				BCE5B0C3268532780070BC2B /* ToDoListAdd.swift in Sources */,
 				BCE5B0AF268530B00070BC2B /* CheckButton.swift in Sources */,
+				BC07F3B626892EA6001E7127 /* ViewController.swift in Sources */,
 				BCE5B09D268530340070BC2B /* ToDoListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

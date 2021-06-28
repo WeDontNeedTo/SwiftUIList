@@ -2,8 +2,9 @@ import SwiftUI
 import Firebase
 
 @main
-struct ToDoLostApp: App {
+struct ToDoListApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self)
+    
     var appDelegate
     var body: some Scene {
         WindowGroup {

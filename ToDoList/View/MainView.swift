@@ -2,23 +2,27 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var tasks = TaskList()
+    @State private var selectedTab = 0
     var body: some View {
-        TabView {
-            ToDoList(tasks: tasks)
-                .tabItem {
-                    Label("Notes", systemImage:
-                            "house")
-                }
+        TabView(selection: $selectedTab) {
             Archive(tasks: tasks)
                 .tabItem {
                     Label("Done", systemImage:
                             "archivebox")
                 }
+                .tag(1)
+            ToDoList(tasks: tasks)
+                .tabItem {
+                    Label("Notes", systemImage:
+                            "house")
+                }
+                .tag(0)
             Trash(tasks: tasks)
                 .tabItem {
                     Label("Deleted", systemImage:
                             "trash")
                 }
+                .tag(2)
         }
         
     }
