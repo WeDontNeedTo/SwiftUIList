@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5E202D702677B16100299A11 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E202D6F2677B16100299A11 /* TaskList.swift */; };
-		5EE1E9342685397B0063C1F5 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1E9332685397B0063C1F5 /* SignView.swift */; };
+		5EB630902689F04D00B2690B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6308F2689F04D00B2690B /* SignInView.swift */; };
+		5EB630932689F1CD00B2690B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB630922689F1CD00B2690B /* SignUpView.swift */; };
+		5EB630982689F6EC00B2690B /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB630972689F6EC00B2690B /* AccountView.swift */; };
+		5EB6309A2689FC5D00B2690B /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB630992689FC5D00B2690B /* CircleImage.swift */; };
+		5EE1E9342685397B0063C1F5 /* SignCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1E9332685397B0063C1F5 /* SignCheck.swift */; };
 		5EE1E9372685409F0063C1F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1E9362685409F0063C1F5 /* AppDelegate.swift */; };
-		5EE1E93A2685540A0063C1F5 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1E9392685540A0063C1F5 /* SwiftUIView.swift */; };
 		5EE3FA0526851E39001E1BF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EE3FA0426851E39001E1BF2 /* GoogleService-Info.plist */; };
 		5EF400062670F7AA00C984E6 /* tasksData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EF400052670F7AA00C984E6 /* tasksData.json */; };
 		5EF4000B2670FEE700C984E6 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4000A2670FEE700C984E6 /* JsonDecoder.swift */; };
@@ -30,9 +33,12 @@
 
 /* Begin PBXFileReference section */
 		5E202D6F2677B16100299A11 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
-		5EE1E9332685397B0063C1F5 /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
+		5EB6308F2689F04D00B2690B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		5EB630922689F1CD00B2690B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		5EB630972689F6EC00B2690B /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		5EB630992689FC5D00B2690B /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		5EE1E9332685397B0063C1F5 /* SignCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignCheck.swift; sourceTree = "<group>"; };
 		5EE1E9362685409F0063C1F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5EE1E9392685540A0063C1F5 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		5EE3FA0426851E39001E1BF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5EF400052670F7AA00C984E6 /* tasksData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = tasksData.json; path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/tasksData.json"; sourceTree = "<group>"; };
 		5EF4000A2670FEE700C984E6 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
@@ -71,14 +77,25 @@
 			children = (
 				5E202D6F2677B16100299A11 /* TaskList.swift */,
 				5EF4000A2670FEE700C984E6 /* JsonDecoder.swift */,
+				5EE1E9362685409F0063C1F5 /* AppDelegate.swift */,
+				5EB630992689FC5D00B2690B /* CircleImage.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5EB630942689F28800B2690B /* SignStep */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1E9332685397B0063C1F5 /* SignCheck.swift */,
+				5EB6308F2689F04D00B2690B /* SignInView.swift */,
+				5EB630922689F1CD00B2690B /* SignUpView.swift */,
+			);
+			path = SignStep;
 			sourceTree = "<group>";
 		};
 		5EE1E935268540920063C1F5 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				5EE1E9362685409F0063C1F5 /* AppDelegate.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -86,8 +103,7 @@
 		5EF400032670F34C00C984E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5EE1E9392685540A0063C1F5 /* SwiftUIView.swift */,
-				5EE1E9332685397B0063C1F5 /* SignView.swift */,
+				5EB630942689F28800B2690B /* SignStep */,
 				6BD80669265FDF1200B10100 /* AddToDo.swift */,
 				6B7ECBE6265E851A009F799D /* RowsView.swift */,
 				5EF4000C2671064500C984E6 /* MainView.swift */,
@@ -109,6 +125,7 @@
 			children = (
 				5EF4000E2671071000C984E6 /* Trash.swift */,
 				5EF400122671073300C984E6 /* Archive.swift */,
+				5EB630972689F6EC00B2690B /* AccountView.swift */,
 			);
 			path = TabView;
 			sourceTree = "<group>";
@@ -300,16 +317,19 @@
 			files = (
 				5E202D702677B16100299A11 /* TaskList.swift in Sources */,
 				6B7ECBE7265E851A009F799D /* RowsView.swift in Sources */,
-				5EE1E9342685397B0063C1F5 /* SignView.swift in Sources */,
+				5EE1E9342685397B0063C1F5 /* SignCheck.swift in Sources */,
 				5EF4000D2671064500C984E6 /* MainView.swift in Sources */,
+				5EB630982689F6EC00B2690B /* AccountView.swift in Sources */,
 				6BD8066A265FDF1200B10100 /* AddToDo.swift in Sources */,
 				6B7ECBE4265E84E0009F799D /* StoreInformation.swift in Sources */,
 				6BD80664265FB6AA00B10100 /* CheckButton.swift in Sources */,
+				5EB630902689F04D00B2690B /* SignInView.swift in Sources */,
 				5EF4000F2671071000C984E6 /* Trash.swift in Sources */,
-				5EE1E93A2685540A0063C1F5 /* SwiftUIView.swift in Sources */,
 				5EF4000B2670FEE700C984E6 /* JsonDecoder.swift in Sources */,
 				6B7ECBC9265E7973009F799D /* ToDobacedOnGuideApp.swift in Sources */,
 				5EE1E9372685409F0063C1F5 /* AppDelegate.swift in Sources */,
+				5EB630932689F1CD00B2690B /* SignUpView.swift in Sources */,
+				5EB6309A2689FC5D00B2690B /* CircleImage.swift in Sources */,
 				5EF400132671073300C984E6 /* Archive.swift in Sources */,
 				6BD80667265FD79900B10100 /* RecoveryButton.swift in Sources */,
 			);

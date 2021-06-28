@@ -12,21 +12,26 @@ struct MainView: View {
     @State private var selectedTab = 0
     var body: some View {
         TabView (selection: $selectedTab) {
-            Archive(tasks: tasks)
-                .tabItem{
-                    Label("Archive",systemImage: "archivebox")
-                }
-                .tag(1)
             RowsView (tasks: tasks)
                 .tabItem{
                     Label("Home",systemImage: "house")
                 }
                 .tag(0)
+            Archive(tasks: tasks)
+                .tabItem{
+                    Label("Archive",systemImage: "archivebox")
+                }
+                .tag(1)
             Trash(tasks: tasks)
                 .tabItem{
                     Label("Trash",systemImage: "trash")
                 }
                 .tag(2)
+            Account()
+                .tabItem {
+                    Label("Account", systemImage: "person.circle")
+                }
+                .tag(3)
         }
     }
 }

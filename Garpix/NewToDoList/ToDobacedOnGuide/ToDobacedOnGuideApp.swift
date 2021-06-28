@@ -16,7 +16,7 @@ struct ToDobacedOnGuideApp: App {
     var appDelegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SignCheck()
         }
     }
 }
