@@ -27,4 +27,6 @@ class SignView: ObservableObject {
             }
             completion(true,(res?.user.email)!)
         }
-    }}
+    }
+    
+}
