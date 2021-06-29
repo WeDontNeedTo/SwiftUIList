@@ -16,6 +16,7 @@ struct SignInView: View {
     @State var alert = false
     @State var message = ""
     @State var show = false
+    @ObservedObject var signUser: SignUser
     
     var body: some View {
         VStack{
@@ -47,7 +48,7 @@ struct SignInView: View {
                 }
             }.padding()
             Button(action: {
-                signInWithEmail(email: self.user, password: self.password) { (verified, status) in
+                signUser.signInWithEmail(email: self.user, password: self.password) { (verified, status) in
                     
                     if !verified {
                         
@@ -85,31 +86,17 @@ struct SignInView: View {
                 
             } .padding(.top, 80)
             .sheet(isPresented: $show, content: {
-                SignUpView(show: $show)
+                SignUpView(show: $show, signUser: signUser)
             })
         }
     }
 }
 
 
-func signInWithEmail(email: String,password : String,completion: @escaping (Bool,String)->Void){
-    
-    Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
-        
-        if err != nil{
-            
-            completion(false,(err?.localizedDescription)!)
-            return
-        }
-        
-        completion(true,(res?.user.email)!)
-    }
-}
-
 
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(signUser: SignUser())
     }
 }

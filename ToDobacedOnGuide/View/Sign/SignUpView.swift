@@ -16,7 +16,7 @@ struct SignUpView: View {
     @State var message = ""
     @State var alert = false
     @Binding var show: Bool
-    
+    @ObservedObject var signUser: SignUser
     var body: some View {
         VStack{
             Text("Sign Up")
@@ -48,7 +48,7 @@ struct SignUpView: View {
             }
             VStack{
                 Button(action: {
-                    signUpWithEmail(email: self.user, password: self.password) { (verified, status) in
+                    signUser.signUpWithEmail(email: self.user, password: self.password) { (verified, status) in
                         
                         if !verified{
                             
@@ -81,22 +81,9 @@ struct SignUpView: View {
     }
 }
 
-func signUpWithEmail(email: String,password : String,completion: @escaping (Bool,String)->Void){
-    
-    Auth.auth().createUser(withEmail: email, password: password) { (res, err) in
-        
-        if err != nil{
-            
-            completion(false,(err?.localizedDescription)!)
-            return
-        }
-        
-        completion(true,(res?.user.email)!)
-    }
-}
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(show: .constant(false))
+        SignUpView(show: .constant(false), signUser: SignUser())
     }
 }

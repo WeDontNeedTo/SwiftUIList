@@ -19,7 +19,7 @@ struct SignStatusView: View {
                 MainView()
             }
             else{
-                SignInView()
+                SignInView(signUser: SignUser())
             }
             
         }.animation(.spring())

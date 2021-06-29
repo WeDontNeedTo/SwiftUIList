@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var tasks = TaskList()
+    @StateObject var signUser = SignUser()
     var body: some View {
         TabView {
             Notes(tasks: tasks)
