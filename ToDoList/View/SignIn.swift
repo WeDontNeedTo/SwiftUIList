@@ -14,6 +14,7 @@ struct SignIn : View {
     @State var message = ""
     @State var alert = false
     @State var show = false
+    @ObservedObject var signView = SignView()
     
     var body : some View{
         VStack {
@@ -50,7 +51,7 @@ struct SignIn : View {
                 .padding(.horizontal, 6)
                 
                 Button(action: {
-                    signInWithEmail(email: self.user, password: self.pass) { (verified, status) in
+                    signView.signInWithEmail(email: self.user, password: self.pass) { (verified, status) in
                         if !verified {
                             self.message = status
                             self.alert.toggle()

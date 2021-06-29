@@ -8,6 +8,7 @@ struct SignUp : View {
     @State var message = ""
     @State var alert = false
     @State var show = false
+    @ObservedObject var signView = SignView()
     
     var body : some View{
         
@@ -47,7 +48,7 @@ struct SignUp : View {
                 
             }.padding(.horizontal, 6)
             
-            Button(action: {signUpWithEmail(email: self.user, password: self.pass) { (verified, status) in
+            Button(action: {signView.signUpWithEmail(email: self.user, password: self.pass) { (verified, status) in
                     
                     if !verified{
                         self.message = status

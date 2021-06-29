@@ -4,6 +4,7 @@ import FirebaseAuth
 
 struct ContentView: View {
     
+    @ObservedObject var signView = SignView()
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     
     var body: some View {
@@ -25,29 +26,29 @@ struct ContentView: View {
     }
 }
 
-func signInWithEmail(email: String,password : String,completion: @escaping (Bool,String)->Void){
-    
-    Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
-        
-        if err != nil{
-            completion(false,(err?.localizedDescription)!)
-            return
-        }
-        
-        completion(true,(res?.user.email)!)
-    }
-}
-
-func signUpWithEmail(email: String,password : String,completion: @escaping (Bool,String)->Void){
-    Auth.auth().createUser(withEmail: email, password: password) { (res, err) in
-        
-        if err != nil{
-            completion(false,(err?.localizedDescription)!)
-            return
-        }
-        completion(true,(res?.user.email)!)
-    }
-}
+//func signInWithEmail(email: String,password : String,completion: @escaping (Bool,String)->Void){
+//    
+//    Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
+//        
+//        if err != nil{
+//            completion(false,(err?.localizedDescription)!)
+//            return
+//        }
+//        
+//        completion(true,(res?.user.email)!)
+//    }
+//}
+//
+//func signUpWithEmail(email: String,password : String,completion: @escaping (Bool,String)->Void){
+//    Auth.auth().createUser(withEmail: email, password: password) { (res, err) in
+//        
+//        if err != nil{
+//            completion(false,(err?.localizedDescription)!)
+//            return
+//        }
+//        completion(true,(res?.user.email)!)
+//    }
+//}
 
 
 struct AuthView_Previews: PreviewProvider {

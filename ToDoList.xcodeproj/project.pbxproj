@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		BC07F3B226890376001E7127 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3B126890376001E7127 /* SignIn.swift */; };
 		BC07F3B42689041D001E7127 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3B32689041D001E7127 /* SignUp.swift */; };
-		BC07F3B626892EA6001E7127 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3B526892EA6001E7127 /* ViewController.swift */; };
+		BC07F3BE268B68EA001E7127 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3BD268B68EA001E7127 /* Repository.swift */; };
+		BC07F3C0268B764E001E7127 /* SignInUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3BF268B764E001E7127 /* SignInUp.swift */; };
 		BCD44FD32685489700D1F5D4 /* Pods_ToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12392363618886FEEADDC91D /* Pods_ToDoList.framework */; };
 		BCD450332687908A00D1F5D4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCD450322687908A00D1F5D4 /* GoogleService-Info.plist */; };
 		BCE5B09D268530340070BC2B /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5B09C268530340070BC2B /* ToDoListApp.swift */; };
@@ -36,7 +37,8 @@
 		27FB1A8408864C7B328E383B /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
 		BC07F3B126890376001E7127 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		BC07F3B32689041D001E7127 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
-		BC07F3B526892EA6001E7127 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC07F3BD268B68EA001E7127 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		BC07F3BF268B764E001E7127 /* SignInUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUp.swift; sourceTree = "<group>"; };
 		BCD450322687908A00D1F5D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCE5B099268530340070BC2B /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE5B09C268530340070BC2B /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
@@ -91,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				BCE5B0CA268536260070BC2B /* AppDelegate.swift */,
-				BC07F3B526892EA6001E7127 /* ViewController.swift */,
+				BC07F3BD268B68EA001E7127 /* Repository.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -154,6 +156,7 @@
 				BCE5B0B1268530F20070BC2B /* JsonConverter.swift */,
 				BCE5B0B32685310F0070BC2B /* TaskList.swift */,
 				BCE5B0B52685313B0070BC2B /* ToDoElement.swift */,
+				BC07F3BF268B764E001E7127 /* SignInUp.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC07F3C0268B764E001E7127 /* SignInUp.swift in Sources */,
 				BCE5B0C5268532990070BC2B /* Trash.swift in Sources */,
 				BCE5B0C7268532C80070BC2B /* SignView.swift in Sources */,
 				BCE5B0B9268531910070BC2B /* AddToDoPage.swift in Sources */,
@@ -316,9 +320,9 @@
 				BCE5B0B2268530F20070BC2B /* JsonConverter.swift in Sources */,
 				BCE5B0CB268536260070BC2B /* AppDelegate.swift in Sources */,
 				BCE5B0AD268530920070BC2B /* ActionTrashButton.swift in Sources */,
+				BC07F3BE268B68EA001E7127 /* Repository.swift in Sources */,
 				BCE5B0C3268532780070BC2B /* ToDoListAdd.swift in Sources */,
 				BCE5B0AF268530B00070BC2B /* CheckButton.swift in Sources */,
-				BC07F3B626892EA6001E7127 /* ViewController.swift in Sources */,
 				BCE5B09D268530340070BC2B /* ToDoListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
