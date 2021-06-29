@@ -3,6 +3,8 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
+
+
 struct SignInView : View {
     
     @State var user = ""
@@ -10,6 +12,7 @@ struct SignInView : View {
     @State var message = ""
     @State var alert = false
     @State var show = false
+    @ObservedObject var sign : SignFuncs
     
     var body : some View{
         VStack {
@@ -50,7 +53,7 @@ struct SignInView : View {
                 
                 Button(action: {
                     
-                    signInWithEmail(email: self.user, password: self.pass) { (verified, status) in
+                    sign.signInWithEmail(email: self.user, password: self.pass) { (verified, status) in
                         
                         if !verified {
                             
@@ -101,28 +104,16 @@ struct SignInView : View {
                 
             }.sheet(isPresented: $show) {
                 
-                SignUpView(show: self.$show)
+                SignUpView(show: self.$show, sign: SignFuncs())
             }
         }
     }
 }
 
-func signInWithEmail(email: String,password : String,completion: @escaping (Bool,String)->Void){
-    
-    Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
-        
-        if err != nil{
-            
-            completion(false,(err?.localizedDescription)!)
-            return
-        }
-        
-        completion(true,(res?.user.email)!)
-    }
-}
+
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(sign: SignFuncs())
     }
 }

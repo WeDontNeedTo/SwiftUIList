@@ -9,7 +9,7 @@ struct SignUpView : View {
     @State var message = ""
     @State var alert = false
     @Binding var show : Bool
-    
+    @ObservedObject var sign : SignFuncs
     var body : some View{
         
         VStack{
@@ -49,7 +49,7 @@ struct SignUpView : View {
             
             Button(action: {
                 
-                signUpWithEmail(email: self.user, password: self.pass) { (verified, status) in
+                sign.signUpWithEmail(email: self.user, password: self.pass) { (verified, status) in
                     
                     if !verified{
                         
@@ -84,22 +84,10 @@ struct SignUpView : View {
     }
 }
 
-func signUpWithEmail(email: String,password : String,completion: @escaping (Bool,String)->Void){
-    
-    Auth.auth().createUser(withEmail: email, password: password) { (res, err) in
-        
-        if err != nil{
-            
-            completion(false,(err?.localizedDescription)!)
-            return
-        }
-        
-        completion(true,(res?.user.email)!)
-    }
-}
+
 
 struct SignUp_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(show: .constant(false))
+        SignUpView(show: .constant(false), sign: SignFuncs())
     }
 }

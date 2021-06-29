@@ -16,7 +16,7 @@ struct SignCheck: View {
             }
             else{
                 
-                SignInView()
+                SignInView(sign: SignFuncs())
             }
             
         }.animation(.spring())

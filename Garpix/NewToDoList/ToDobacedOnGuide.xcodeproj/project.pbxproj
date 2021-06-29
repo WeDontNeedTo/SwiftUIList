@@ -12,6 +12,7 @@
 		5EB630932689F1CD00B2690B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB630922689F1CD00B2690B /* SignUpView.swift */; };
 		5EB630982689F6EC00B2690B /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB630972689F6EC00B2690B /* AccountView.swift */; };
 		5EB6309A2689FC5D00B2690B /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB630992689FC5D00B2690B /* CircleImage.swift */; };
+		5EB65DDB268B83FD002E2D73 /* SignFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB65DDA268B83FD002E2D73 /* SignFuncs.swift */; };
 		5EE1E9342685397B0063C1F5 /* SignCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1E9332685397B0063C1F5 /* SignCheck.swift */; };
 		5EE1E9372685409F0063C1F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1E9362685409F0063C1F5 /* AppDelegate.swift */; };
 		5EE3FA0526851E39001E1BF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EE3FA0426851E39001E1BF2 /* GoogleService-Info.plist */; };
@@ -37,6 +38,7 @@
 		5EB630922689F1CD00B2690B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		5EB630972689F6EC00B2690B /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		5EB630992689FC5D00B2690B /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		5EB65DDA268B83FD002E2D73 /* SignFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignFuncs.swift; sourceTree = "<group>"; };
 		5EE1E9332685397B0063C1F5 /* SignCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignCheck.swift; sourceTree = "<group>"; };
 		5EE1E9362685409F0063C1F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EE3FA0426851E39001E1BF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -78,7 +80,7 @@
 				5E202D6F2677B16100299A11 /* TaskList.swift */,
 				5EF4000A2670FEE700C984E6 /* JsonDecoder.swift */,
 				5EE1E9362685409F0063C1F5 /* AppDelegate.swift */,
-				5EB630992689FC5D00B2690B /* CircleImage.swift */,
+				5EB65DDA268B83FD002E2D73 /* SignFuncs.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -91,6 +93,14 @@
 				5EB630922689F1CD00B2690B /* SignUpView.swift */,
 			);
 			path = SignStep;
+			sourceTree = "<group>";
+		};
+		5EB65DD9268B837F002E2D73 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5EB630992689FC5D00B2690B /* CircleImage.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		5EE1E935268540920063C1F5 /* Firebase */ = {
@@ -171,6 +181,7 @@
 				5EE1E935268540920063C1F5 /* Firebase */,
 				5EE3FA0426851E39001E1BF2 /* GoogleService-Info.plist */,
 				5E202D712677B16F00299A11 /* Helpers */,
+				5EB65DD9268B837F002E2D73 /* Components */,
 				5EF400152671107400C984E6 /* Buttons */,
 				5EF400042670F77800C984E6 /* Resourses */,
 				6B7ECBC8265E7973009F799D /* ToDobacedOnGuideApp.swift */,
@@ -315,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EB65DDB268B83FD002E2D73 /* SignFuncs.swift in Sources */,
 				5E202D702677B16100299A11 /* TaskList.swift in Sources */,
 				6B7ECBE7265E851A009F799D /* RowsView.swift in Sources */,
 				5EE1E9342685397B0063C1F5 /* SignCheck.swift in Sources */,
