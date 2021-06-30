@@ -27,7 +27,7 @@ struct AddToDoPage: View {
                 Text("Cancel").bold()
             },
             trailing: Button(action: {
-                addnewtodo.append (ToDoElement(id: addnewtodo.count + 1, description: newTodo, isDeleted: false, isArcheveted: false))
+                addnewtodo.append (ToDoElement(id: addnewtodo.count, description: newTodo, isDeleted: false, isArcheveted: false))
                 print("в нью \(addnewtodo.count)")
                 self.showSheetView = false
             }, label: {

@@ -12,6 +12,8 @@
 		BC07F3BE268B68EA001E7127 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3BD268B68EA001E7127 /* Repository.swift */; };
 		BC07F3C0268B764E001E7127 /* SignInUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3BF268B764E001E7127 /* SignInUp.swift */; };
 		BC07F3C2268B8668001E7127 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3C1268B8668001E7127 /* SearchBar.swift */; };
+		BC07F3C5268CD147001E7127 /* TaskVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3C4268CD147001E7127 /* TaskVIewModel.swift */; };
+		BC07F3CB268CE858001E7127 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BC07F3CA268CE858001E7127 /* .gitignore */; };
 		BCD44FD32685489700D1F5D4 /* Pods_ToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12392363618886FEEADDC91D /* Pods_ToDoList.framework */; };
 		BCD450332687908A00D1F5D4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCD450322687908A00D1F5D4 /* GoogleService-Info.plist */; };
 		BCE5B09D268530340070BC2B /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5B09C268530340070BC2B /* ToDoListApp.swift */; };
@@ -41,6 +43,8 @@
 		BC07F3BD268B68EA001E7127 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		BC07F3BF268B764E001E7127 /* SignInUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUp.swift; sourceTree = "<group>"; };
 		BC07F3C1268B8668001E7127 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		BC07F3C4268CD147001E7127 /* TaskVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVIewModel.swift; sourceTree = "<group>"; };
+		BC07F3CA268CE858001E7127 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BCD450322687908A00D1F5D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCE5B099268530340070BC2B /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE5B09C268530340070BC2B /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
@@ -91,6 +95,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BC07F3C3268CD128001E7127 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BC07F3C4268CD147001E7127 /* TaskVIewModel.swift */,
+				BCE5B0B32685310F0070BC2B /* TaskList.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		BCD45034268793DB00D1F5D4 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +134,7 @@
 		BCE5B09B268530340070BC2B /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				BC07F3C3268CD128001E7127 /* ViewModel */,
 				BCD45034268793DB00D1F5D4 /* Firebase */,
 				BCE5B0BD268532130070BC2B /* View */,
 				BCE5B0BA268531D00070BC2B /* Resources */,
@@ -131,6 +145,7 @@
 				BCE5B0A5268530350070BC2B /* Info.plist */,
 				BCD450322687908A00D1F5D4 /* GoogleService-Info.plist */,
 				BCE5B0A2268530350070BC2B /* Preview Content */,
+				BC07F3CA268CE858001E7127 /* .gitignore */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -157,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				BCE5B0B1268530F20070BC2B /* JsonConverter.swift */,
-				BCE5B0B32685310F0070BC2B /* TaskList.swift */,
 				BCE5B0B52685313B0070BC2B /* ToDoElement.swift */,
 				BC07F3BF268B764E001E7127 /* SignInUp.swift */,
 			);
@@ -254,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC07F3CB268CE858001E7127 /* .gitignore in Resources */,
 				BCE5B0A4268530350070BC2B /* Preview Assets.xcassets in Resources */,
 				BCD450332687908A00D1F5D4 /* GoogleService-Info.plist in Resources */,
 				BCE5B0BC268531E90070BC2B /* toDoData.json in Resources */,
@@ -319,6 +334,7 @@
 				BC07F3B42689041D001E7127 /* SignUp.swift in Sources */,
 				BCE5B0B42685310F0070BC2B /* TaskList.swift in Sources */,
 				BCE5B0C1268532380070BC2B /* MainView.swift in Sources */,
+				BC07F3C5268CD147001E7127 /* TaskVIewModel.swift in Sources */,
 				BCE5B0B62685313B0070BC2B /* ToDoElement.swift in Sources */,
 				BC07F3B226890376001E7127 /* SignIn.swift in Sources */,
 				BCE5B0B2268530F20070BC2B /* JsonConverter.swift in Sources */,
