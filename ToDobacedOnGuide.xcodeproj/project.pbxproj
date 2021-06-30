@@ -16,6 +16,8 @@
 		2391C3A52688D17900BBCEB9 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C3A42688D17900BBCEB9 /* SignInView.swift */; };
 		2391C3A72688DB4A00BBCEB9 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C3A62688DB4A00BBCEB9 /* SignUpView.swift */; };
 		23D9666826855A1B006D29DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23D9666726855A1B006D29DF /* GoogleService-Info.plist */; };
+		23E85FE6268CBD630083C38B /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E85FE5268CBD630083C38B /* TaskRepository.swift */; };
+		23E85FE8268CC6400083C38B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 23E85FE7268CC6400083C38B /* .gitignore */; };
 		23FF3F73268540770025D80F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FF3F72268540770025D80F /* AppDelegate.swift */; };
 		61230DE0B41AEA6E993DA7A8 /* Pods_ToDobacedOnGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA05F57C046892E7BF70E8C6 /* Pods_ToDobacedOnGuide.framework */; };
 		6B7ECBC9265E7973009F799D /* ToDobacedOnGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7ECBC8265E7973009F799D /* ToDobacedOnGuideApp.swift */; };
@@ -42,6 +44,8 @@
 		2391C3A42688D17900BBCEB9 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		2391C3A62688DB4A00BBCEB9 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		23D9666726855A1B006D29DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		23E85FE5268CBD630083C38B /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
+		23E85FE7268CC6400083C38B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		23FF3F72268540770025D80F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40F26184282314F0301244B4 /* Pods-ToDobacedOnGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDobacedOnGuide.release.xcconfig"; path = "Target Support Files/Pods-ToDobacedOnGuide/Pods-ToDobacedOnGuide.release.xcconfig"; sourceTree = "<group>"; };
 		6B7ECBC5265E7973009F799D /* ToDobacedOnGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDobacedOnGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +129,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		23E85FE4268CBD4B0083C38B /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				23E85FE5268CBD630083C38B /* TaskRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		23F028F3268A0CAE00001874 /* TabView */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				6B7ECBC7265E7973009F799D /* ToDobacedOnGuide */,
+				23E85FE4268CBD4B0083C38B /* Repositories */,
+				23E85FE7268CC6400083C38B /* .gitignore */,
 				6B7ECBC6265E7973009F799D /* Products */,
 				882673B739B9E53226A3561A /* Pods */,
 				F091BFD362564247FB4C7E83 /* Frameworks */,
@@ -263,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23E85FE8268CC6400083C38B /* .gitignore in Resources */,
 				6B7ECBD0265E7975009F799D /* Preview Assets.xcassets in Resources */,
 				23D9666826855A1B006D29DF /* GoogleService-Info.plist in Resources */,
 				6B7ECBCD265E7975009F799D /* Assets.xcassets in Resources */,
@@ -333,6 +348,7 @@
 				2377F0E7268B75CE00E8167D /* SignUser.swift in Sources */,
 				23FF3F73268540770025D80F /* AppDelegate.swift in Sources */,
 				6BD80664265FB6AA00B10100 /* CheckButton.swift in Sources */,
+				23E85FE6268CBD630083C38B /* TaskRepository.swift in Sources */,
 				2340BB8A268920F800E7A44F /* SignStatusView.swift in Sources */,
 				2391C3A72688DB4A00BBCEB9 /* SignUpView.swift in Sources */,
 				6B7ECBC9265E7973009F799D /* ToDobacedOnGuideApp.swift in Sources */,

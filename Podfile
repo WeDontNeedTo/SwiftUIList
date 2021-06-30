@@ -9,6 +9,7 @@ target 'ToDobacedOnGuide' do
 pod 'Firebase/Analytics'
 pod 'Firebase/Firestore'
 pod 'Firebase/Auth'
+pod 'FirebaseFirestoreSwift'
 # add the Firebase pod for Google Analytics
 pod 'Firebase/Analytics'
 # or pod ‘Firebase/AnalyticsWithoutAdIdSupport’
