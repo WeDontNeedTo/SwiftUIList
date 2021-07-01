@@ -6,6 +6,7 @@ struct ToDoList: View {
     @State var isSet: Bool = false
     @State var showSheetView = false
     @State private var searchText = ""
+    @ObservedObject var taskListViewModel: TaskListViewModel
     
     var buttonAdd: some View {
         HStack{
@@ -66,14 +67,15 @@ struct ToDoList: View {
             .navigationBarItems(leading: exitButton,
                                 trailing: buttonAdd)
             .sheet(isPresented: $showSheetView){
-                AddToDoPage(showSheetView: self.$showSheetView, addnewtodo: self.$tasks.toDoElements)
+                AddToDoPage(showSheetView: self.$showSheetView, addnewtodo: self.$tasks.toDoElements, taskListViewModel: taskListViewModel)
             }
         }
     }
 }
 
+
 struct RowsView_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoList(tasks: TaskList())
+        ToDoList(tasks: TaskList(), taskListViewModel: TaskListViewModel())
     }
 }

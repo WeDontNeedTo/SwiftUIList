@@ -4,6 +4,9 @@ struct AddToDoPage: View {
     @Binding var showSheetView: Bool
     @Binding var addnewtodo:[ToDoElement]
     @State var newTodo : String = ""
+    @ObservedObject var taskListViewModel: TaskListViewModel
+    
+   
     
     var ToDoField: some View{
         VStack{
@@ -26,10 +29,11 @@ struct AddToDoPage: View {
             {
                 Text("Cancel").bold()
             },
-            trailing: Button(action: {
-                addnewtodo.append (ToDoElement(id: addnewtodo.count, description: newTodo, isDeleted: false, isArcheveted: false))
-                print("в нью \(addnewtodo.count)")
-                self.showSheetView = false
+            trailing: Button(action: addTask {
+//                addnewtodo.append (ToDoElement(id: addnewtodo.count, description: newTodo, isDeleted: false, isArcheveted: false))
+//                print("в нью \(addnewtodo.count)")
+//                self.showSheetView = false
+                
             }, label: {
                 Text("Add")
             }))
@@ -37,10 +41,22 @@ struct AddToDoPage: View {
         }
         
     }
+   
+   
+    private func addTask() {
+
+        let task = ToDoElement(id: addnewtodo.count, description: newTodo , isDeleted: false, isArcheveted: false)
+        print("в нью \(addnewtodo.count)")
+        self.showSheetView = false
+
+        taskListViewModel.add(task)
+        
+    }
 }
 
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
-        AddToDoPage(showSheetView: .constant(false), addnewtodo: .constant([]))
+        AddToDoPage(showSheetView: .constant(false), addnewtodo: .constant([]), taskListViewModel: TaskListViewModel())
     }
 }
+
