@@ -6,16 +6,23 @@ struct Trash: View {
     @State private var showActionSheet = false
     @State var idOfTask: Int = 0
     @State var isDeleted: Bool = true
+    @State var text: String = ""
+    
+    var filteredTasks: [ToDoElement] {
+        tasks.toDoElements.filter({$0.description.contains(text) || text.isEmpty})
+    }
+    
     var body: some View {
         
         NavigationView{
             VStack{
                 List{
-                    ForEach(tasks.toDoElements.indices, id: \.self) { index in
-                        if (tasks.toDoElements[index].isDeleted){
+                    CustomSearchBar(text: $text)
+                    ForEach(filteredTasks.indices, id: \.self) { index in
+                        if (filteredTasks[index].isDeleted){
                             HStack{
-                                Text(tasks.toDoElements[index].description)
-                                    .strikethrough(tasks.toDoElements[index].isArcheveted)
+                                Text(filteredTasks[index].description)
+                                    .strikethrough(filteredTasks[index].isArcheveted)
                                 Spacer()
                                 ActionTrashButton(isSet: $tasks.toDoElements[index].isArcheveted, isDeleted: $tasks.toDoElements[index].isDeleted, showActionSheet: $showActionSheet, tasks: tasks, idOfTask: index)
                             }

@@ -17,16 +17,21 @@ struct Notes: View {
             })
         }
     }
+    
+    var filteredTasks: [ToDoElement] {
+        tasks.toDoElements.filter({$0.description.contains(text) || text.isEmpty})
+    }
+    
     var body: some View {
         NavigationView{
             VStack{
                 List {
                     CustomSearchBar(text: $text)
-                    ForEach(tasks.toDoElements.indices, id: \.self) { index in
-                        if (!tasks.toDoElements[index].isDeleted && !tasks.toDoElements[index].isArcheveted) {
+                    ForEach(filteredTasks.indices, id: \.self) { index in
+                        if (!filteredTasks[index].isDeleted && !filteredTasks[index].isArcheveted) {
                             HStack {
-                                Text(tasks.toDoElements[index].description)
-                                    .strikethrough(tasks.toDoElements[index].isArcheveted)
+                                Text(filteredTasks[index].description)
+                                    .strikethrough(filteredTasks[index].isArcheveted)
                                 Spacer()
                                 CheckButton(isSet: $tasks.toDoElements[index].isArcheveted)
                             }

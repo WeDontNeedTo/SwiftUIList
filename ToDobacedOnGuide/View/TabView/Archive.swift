@@ -2,14 +2,21 @@ import SwiftUI
 
 struct Archive: View {
     @ObservedObject var tasks: TaskList
+    @State var text: String = ""
+    
+    var filteredTasks: [ToDoElement] {
+        tasks.toDoElements.filter({$0.description.contains(text) || text.isEmpty})
+    }
+    
     var body: some View {
         NavigationView{
             VStack{
                 List{
-                    ForEach(tasks.toDoElements.indices, id: \.self) { index in
-                        if (tasks.toDoElements[index].isArcheveted && !tasks.toDoElements[index].isDeleted){
+                    CustomSearchBar(text: $text)
+                    ForEach(filteredTasks.indices, id: \.self) { index in
+                        if (filteredTasks[index].isArcheveted && !filteredTasks[index].isDeleted){
                             HStack{
-                                Text(tasks.toDoElements[index].description)
+                                Text(filteredTasks[index].description)
                                     .strikethrough(tasks.toDoElements[index].isArcheveted)
                                 Spacer()
                                 CheckButton(isSet: $tasks.toDoElements[index].isArcheveted)
