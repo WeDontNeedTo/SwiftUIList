@@ -29,6 +29,11 @@ struct ToDoList: View {
                         .foregroundColor(.yellow)
                 }
     }
+    
+    var filteredTasks: [ToDoElement] {
+        tasks.toDoElements.filter({$0.description.contains(searchText) || searchText.isEmpty})
+    }
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -37,17 +42,18 @@ struct ToDoList: View {
 //                tasks.toDoElements.filter({self.searchText.isEmpty ? true : $0.description.contains(searchText)})
                 
                 List {
-                    ForEach((tasks.toDoElements.indices).filter({"\($0)".description.contains(searchText) || searchText.isEmpty}), id: \.self) { index in
-                        if (!tasks.toDoElements[index].isDeleted && !tasks.toDoElements[index].isArcheveted) {
+                    ForEach(filteredTasks.indices, id: \.self) { index in
+                        if (!filteredTasks[index].isDeleted && !filteredTasks[index].isArcheveted) {
                             HStack {
-                                Text(tasks.toDoElements[index].description)
-                                    .strikethrough(tasks.toDoElements[index].isArcheveted)
+                                Text(filteredTasks[index].description)
+                                    .strikethrough(filteredTasks[index].isArcheveted)
                                 Spacer()
                                 CheckButton(isSet: $tasks.toDoElements[index].isArcheveted)
                             }
                         }
                         
                     }
+
                     .onDelete(perform: { indexSet in
                         let index = indexSet[indexSet.startIndex]
                         tasks.toDoElements[index].isDeleted.toggle()

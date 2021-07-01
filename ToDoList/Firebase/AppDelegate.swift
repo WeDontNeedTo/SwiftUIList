@@ -2,9 +2,9 @@ import UIKit
 import FirebaseCore
 import FirebaseAuth
 import Firebase
-import FirebaseDatabase
+//import FirebaseDatabase
 
-var ref:DatabaseReference!
+//var ref:DatabaseReference!
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     

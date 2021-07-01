@@ -3,7 +3,7 @@ import Foundation
 import Firebase
 
 class TaskViewModel: ObservableObject {
-  @Published var taskRepository = TaskRepository()
+//  @Published var taskRepository = TaskRepository()
   @Published var taskVIewModel : [ToDoElement] = []
     
 //    private var db = Firestore.firestore()
