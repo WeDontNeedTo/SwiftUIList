@@ -30,28 +30,24 @@ struct AddToDoPage: View {
             {
                 Text("Cancel").bold()
             },
-            trailing: Button(action: {
-                addnewtodo.append (ToDoElement(id: addnewtodo.count, description: newTodo, isDeleted: false, isArcheveted: false))
-//                print("в нью \(addnewtodo.count)")
-                self.showSheetView = false
-                
-            }, label: {
+            trailing: Button(action: addTask) {
                 Text("Add")
-            }))
+            })
             
         }
         
     }
    
    
-//    private func addTask() {
-//
-//        let task = ToDoElement(id: addnewtodo.count, description: newTodo , isDeleted: false, isArcheveted: false)
-//        print("в нью \(addnewtodo.count)")
-//        self.showSheetView = false
-//
-//
-//    }
+    private func addTask() {
+
+        let task = ToDoElement(id: addnewtodo.count, description: newTodo , isDeleted: false, isArcheveted: false)
+        print("в нью \(addnewtodo.count)")
+        tasks.addTask(task: task)
+        self.showSheetView = false
+
+
+    }
 }
 
 struct SheetView_Previews: PreviewProvider {
