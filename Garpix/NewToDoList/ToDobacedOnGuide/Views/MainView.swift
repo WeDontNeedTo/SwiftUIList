@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var tasks = TaskList()
+    @StateObject var tasks = TaskItemModel()
     @State private var selectedTab = 0
     var body: some View {
         TabView (selection: $selectedTab) {
@@ -37,7 +37,7 @@ struct MainView: View {
 }
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(tasks: TaskList())
+        MainView(tasks: TaskItemModel())
     }
 }
 

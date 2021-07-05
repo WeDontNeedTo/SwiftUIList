@@ -4,7 +4,7 @@ struct RecoveryButton: View {
     @Binding var isDelete : Bool
     var taskId : Int
     @Binding var taskName : String
-    @ObservedObject var tasks: TaskList
+    @ObservedObject var tasks: TaskItemModel
         var body: some View {
     
             Button(action: {
@@ -24,6 +24,6 @@ struct RecoveryButton: View {
 
 struct RecoveryButton_Previews: PreviewProvider {
     static var previews: some View {
-        RecoveryButton(showActionSheet: .constant(false), isDelete: .constant(false),taskId: 0,taskName: .constant(""),tasks: TaskList())
+        RecoveryButton(showActionSheet: .constant(false), isDelete: .constant(false),taskId: 0,taskName: .constant(""),tasks: TaskItemModel())
     }
 }

@@ -11,7 +11,7 @@ struct Account: View {
                         .padding([.top,.bottom]);
                     Text ("Имя пользователя")
                     HStack{
-                        Text(" \((Auth.auth().currentUser?.email)!)")
+                        Text(" \((Auth.auth().currentUser?.email) ?? "")")
                     }
                 }
                 List{

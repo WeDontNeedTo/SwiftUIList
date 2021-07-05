@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Trash: View {
-    @ObservedObject var tasks: TaskList
+    @ObservedObject var tasks: TaskItemModel
     @State var showActionSheet: Bool = false
     @State var isDelete : Bool = false
     @State var taskId : Int = 1
@@ -40,7 +40,7 @@ struct Trash: View {
 }
 struct Trash_Previews: PreviewProvider {
     static var previews: some View {
-        Trash(tasks: TaskList())
+        Trash(tasks: TaskItemModel())
     }
 }
 

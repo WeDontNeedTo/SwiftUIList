@@ -1,9 +1,9 @@
 import SwiftUI
 struct RowsView: View {
-    @ObservedObject var tasks : TaskList
+    @ObservedObject var tasks : TaskItemModel
     @State var isSet: Bool = false
     @State var showAddToDo = false
-    
+    @State private var searchText = ""
     var buttonAdd: some View {
         HStack{
             Button(action: {self.showAddToDo.toggle()}, label: {
@@ -12,16 +12,24 @@ struct RowsView: View {
             })
         }
     }
+    
+    var filteredTasks: [ToDoElement] {
+            tasks.toDoElements.filter({$0.description.contains(searchText) || searchText.isEmpty})
+        }
+    
     var body: some View {
         NavigationView{
             VStack{
+                SearchBar(text: $searchText)
+                        .padding(.top, 7)
                 List {
-                    ForEach(tasks.toDoElements.indices, id: \.self) { index in
-                        if (!tasks.toDoElements[index].isDeleted &&
-                                !tasks.toDoElements[index].isArchived){
+                    
+                    ForEach(filteredTasks.indices, id: \.self) { index in
+                        if (!filteredTasks[index].isDeleted &&
+                                !filteredTasks[index].isArchived){
                             HStack {
-                                Text(tasks.toDoElements[index].description)
-                                    .strikethrough(tasks.toDoElements[index].isArchived)
+                                Text(filteredTasks[index].description)
+                                    .strikethrough(filteredTasks[index].isArchived)
                                 Spacer()
                                 CheckButton(isSet: $tasks.toDoElements[index].isArchived)
                             }
@@ -35,10 +43,13 @@ struct RowsView: View {
                 }
                 .listStyle(GroupedListStyle())
             }
+//            .onAppear{
+//                tasks.getTasks()
+//            }
             .navigationTitle("To Do List")
             .navigationBarItems(trailing: buttonAdd)
             .sheet(isPresented: $showAddToDo){
-                AddToDo(showAddToDo: self.$showAddToDo, addnewtodo: self.$tasks.toDoElements)
+                AddToDoPage(showSheetView: self.$showAddToDo, addnewtodo: self.$tasks.toDoElements, tasks: tasks)
             }
         }
     }
@@ -46,6 +57,6 @@ struct RowsView: View {
 
 struct RowsView_Previews: PreviewProvider {
     static var previews: some View {
-        RowsView(tasks: TaskList())
+        RowsView(tasks: TaskItemModel())
     }
 }

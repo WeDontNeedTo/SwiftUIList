@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Archive: View {
-    @ObservedObject var tasks: TaskList
+    @ObservedObject var tasks: TaskItemModel
     var body: some View {
         NavigationView {
             VStack {
@@ -39,6 +39,6 @@ struct Archive: View {
 
 struct Archive_Previews: PreviewProvider {
     static var previews: some View {
-        Archive(tasks: TaskList())
+        Archive(tasks: TaskItemModel())
     }
 }
