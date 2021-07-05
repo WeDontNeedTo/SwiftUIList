@@ -12,12 +12,18 @@ class TaskRepository: ObservableObject{
     
     @Published var tasks = [ToDoElement]()
     
-    func loadData(_ onSuccess: @escaping([TaskList]) -> Void) {
-        _ = [TaskList]()
+    func getTasks() {
         db.collection("tasks").addSnapshotListener{ (querySnapshot, error) in
             if let querySnapshot = querySnapshot{
                 self.tasks = querySnapshot.documents.compactMap{ document in
-                    try? document.data(as: ToDoElement.self)
+                    do{
+                        let x = try document.data(as: TaskList.self)
+                        return x
+                    }
+                    catch{
+                        print(error)
+                    }
+                    return nil
                 }
             }
         }
@@ -34,9 +40,7 @@ class TaskRepository: ObservableObject{
         
     func updateTask(task: ToDoElement)  {
         
-//            if let id = task.id{
-//                if let user = user{
-//                    let doc = db.collection(path).document(user.uid).collection("tasks").document(id)
+
                     do{
                         let doc = db.collection(path).document()
                         try doc.setData(from: task)

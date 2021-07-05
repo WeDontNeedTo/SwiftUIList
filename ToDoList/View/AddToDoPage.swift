@@ -46,7 +46,6 @@ struct AddToDoPage: View {
         tasks.addTask(task: task)
         self.showSheetView = false
 
-
     }
 }
 
