@@ -5,8 +5,8 @@ struct ToDoList: View {
     @ObservedObject var tasks: TaskList
     @State var isSet: Bool = false
     @State var showSheetView = false
-    @State private var searchText = ""
-//    @ObservedObject var taskListViewModel: TaskListViewModel
+    @State var searchText = ""
+
     
     var buttonAdd: some View {
         HStack{
@@ -25,7 +25,6 @@ struct ToDoList: View {
                        NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
                        
                    }) {
-                       
                        Image(systemName: "arrowshape.turn.up.backward.fill")
                         .foregroundColor(.yellow)
                 }
@@ -38,10 +37,9 @@ struct ToDoList: View {
     var body: some View {
         NavigationView{
             VStack{
-                SearchBar(text: $searchText)
-                                    
-//                tasks.toDoElements.filter({self.searchText.isEmpty ? true : $0.description.contains(searchText)})
                 
+                SearchBar(text: $searchText)
+
                 List {
                     ForEach(filteredTasks.indices, id: \.self) { index in
                         if (!filteredTasks[index].isDeleted && !filteredTasks[index].isArcheveted) {
@@ -52,22 +50,22 @@ struct ToDoList: View {
                                 CheckButton(isSet: $tasks.toDoElements[index].isArcheveted)
                             }
                         }
-                        
                     }
-
                     .onDelete(perform: { indexSet in
                         let index = indexSet[indexSet.startIndex]
                         tasks.toDoElements[index].isDeleted.toggle()
                     })
-                    
                 }
                 .listStyle(GroupedListStyle())
+            }
+            .onAppear{
+                tasks.getTasks()
             }
             .navigationTitle("Notes")
             .navigationBarItems(leading: exitButton,
                                 trailing: buttonAdd)
             .sheet(isPresented: $showSheetView){
-                AddToDoPage(showSheetView: self.$showSheetView, addnewtodo: self.$tasks.toDoElements, tasks: tasks)
+                AddToDoPage(showSheetView: self.$showSheetView, addnewtodo: self.$tasks.toDoElements, tasks: TaskList())
             }
         }
     }

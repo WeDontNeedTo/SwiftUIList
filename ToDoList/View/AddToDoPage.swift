@@ -33,16 +33,13 @@ struct AddToDoPage: View {
             trailing: Button(action: addTask) {
                 Text("Add")
             })
-            
         }
-        
     }
    
    
-    private func addTask() {
+     func addTask() {
 
-        let task = ToDoElement(id: addnewtodo.count, description: newTodo , isDeleted: false, isArcheveted: false)
-        print("в нью \(addnewtodo.count)")
+        let task = ToDoElement(id: addnewtodo.count + 1, description: newTodo , isDeleted: false, isArcheveted: false)
         tasks.addTask(task: task)
         self.showSheetView = false
 

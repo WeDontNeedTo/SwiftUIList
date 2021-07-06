@@ -12,7 +12,6 @@
 		BC07F3BE268B68EA001E7127 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3BD268B68EA001E7127 /* Repository.swift */; };
 		BC07F3C0268B764E001E7127 /* SignInUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3BF268B764E001E7127 /* SignInUp.swift */; };
 		BC07F3C2268B8668001E7127 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3C1268B8668001E7127 /* SearchBar.swift */; };
-		BC07F3C5268CD147001E7127 /* TaskVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07F3C4268CD147001E7127 /* TaskVIewModel.swift */; };
 		BC07F3CB268CE858001E7127 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BC07F3CA268CE858001E7127 /* .gitignore */; };
 		BC07F3CE268DE363001E7127 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = BC07F3CD268DE363001E7127 /* FirebaseFirestoreSwift-Beta */; };
 		BC07F3D0268DE363001E7127 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BC07F3CF268DE363001E7127 /* FirebaseStorage */; };
@@ -44,7 +43,6 @@
 		BC07F3BD268B68EA001E7127 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		BC07F3BF268B764E001E7127 /* SignInUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUp.swift; sourceTree = "<group>"; };
 		BC07F3C1268B8668001E7127 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		BC07F3C4268CD147001E7127 /* TaskVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVIewModel.swift; sourceTree = "<group>"; };
 		BC07F3CA268CE858001E7127 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BCD450322687908A00D1F5D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCE5B099268530340070BC2B /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +84,6 @@
 		BC07F3C3268CD128001E7127 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				BC07F3C4268CD147001E7127 /* TaskVIewModel.swift */,
 				BCE5B0B32685310F0070BC2B /* TaskList.swift */,
 			);
 			path = ViewModel;
@@ -286,7 +283,6 @@
 				BC07F3B42689041D001E7127 /* SignUp.swift in Sources */,
 				BCE5B0B42685310F0070BC2B /* TaskList.swift in Sources */,
 				BCE5B0C1268532380070BC2B /* MainView.swift in Sources */,
-				BC07F3C5268CD147001E7127 /* TaskVIewModel.swift in Sources */,
 				BCE5B0B62685313B0070BC2B /* ToDoElement.swift in Sources */,
 				BC07F3B226890376001E7127 /* SignIn.swift in Sources */,
 				BCE5B0B2268530F20070BC2B /* JsonConverter.swift in Sources */,

@@ -4,7 +4,7 @@ struct MainView: View {
     @StateObject var tasks = TaskList()
     @State private var selectedTab = 0
     @StateObject var signView = SignView()
-//    @StateObject var taskListViewModel = TaskListViewModel()
+
     var body: some View {
         TabView(selection: $selectedTab) {
             Archive(tasks: tasks)
