@@ -46,10 +46,13 @@ struct Notes: View {
                 }
                 .listStyle(GroupedListStyle())
             }
+            .onAppear{
+                tasks.getTasks()
+            }
             .navigationTitle("Notes")
             .navigationBarItems(trailing: buttonAdd)
             .sheet(isPresented: $showSheetView){
-                AddToDoView(showSheetView: self.$showSheetView, addnewtodo: self.$tasks.toDoElements)
+                AddToDoView(showSheetView: self.$showSheetView, addnewtodo: self.$tasks.toDoElements, tasks: TaskList())
             }
         }
     }

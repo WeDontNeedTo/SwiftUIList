@@ -1,83 +1,65 @@
+
 import Foundation
 import Firebase
 import FirebaseFirestore
-import FirebaseAuth
 import FirebaseFirestoreSwift
 
-class TaskRepository {
+
+
+class TaskRepository: ObservableObject{
     static let shared = TaskRepository()
+    private let path: String = "tasks"
+    
     let db = Firestore.firestore()
     
+    @Published var tasks = [ToDoElement]()
     
-    func getTasks(_ onSuccess: @escaping([ToDoElement]) -> Void)  {
-        let user = Auth.auth().currentUser
-        var tasks = [ToDoElement]()
-        if let user = user{
-            db.collection("users").document(user.uid).collection("tasks").getDocuments { querySnapshot, error in
-                if let error = error {
-                    debugPrint("error", error)
-                }
-                if let querySnapshot = querySnapshot{
-                    tasks = querySnapshot.documents.compactMap { doc in
-                        do {
-                            let x = try doc.data(as: ToDoElement.self)
-                            return x
-                        }
-                        catch {
-                            print(error)
-                        }
-                        return nil
+    func getTasks(_ onSuccess: @escaping([ToDoElement]) -> Void) {
+        db.collection("tasks").addSnapshotListener{ (querySnapshot, error) in
+            if let querySnapshot = querySnapshot{
+                self.tasks = querySnapshot.documents.compactMap{ document in
+                    do{
+                        let x = try document.data(as: ToDoElement.self)
+                        return x
                     }
-                    onSuccess(tasks)
-                }
-            }
-        }
-    }
-    
-    func updateTask(task: ToDoElement)  {
-        let user = Auth.auth().currentUser
-        if let id = ToDoElement.id{
-            if let user = user{
-                let doc = db.collection("users").document(user.uid).collection("tasks").document(String(id))
-                do{
-                    try doc.setData(from: ToDoElement)
-                }
-                catch{
-                    print("Something wrong with update")
+                    catch{
+                        print(error)
+                    }
+                    return nil
                 }
             }
         }
     }
     
     func addTask(task: ToDoElement)  {
-        let user = Auth.auth().currentUser
-        var ref: DocumentReference? = nil
-        if let user = user{
-            do{
-                ref = try db.collection("users").document(user.uid).collection("tasks").addDocument(from: ToDoElement) { err in
-                    if let err = err {
-                        print("Error adding document: \(err)")
-                    } else {
-                        print("Document added with ID: \(ref!.documentID)")
-                    }
-                }
-            }
-            catch{
-                print("Something wrong with adding")
-            }
+        do{
+            let _ = try db.collection(path).addDocument(from: task)
+        }
+        catch{
+            fatalError("Unable to encode task: \(error.localizedDescription)" )
         }
     }
     
+    func updateTask(task: ToDoElement)  {
+        
+        
+        do{
+            let doc = db.collection(path).document()
+            try doc.setData(from: task)
+        }
+        catch{
+            print("Something wrong with update")
+        }
+    }
+    
+    
     func deleteTask(task: ToDoElement)  {
-        let user = Auth.auth().currentUser
-        if let id = task.id{
-            if let user = user{
-                db.collection("users").document(user.uid).collection("tasks").document(String(id)).delete(){ err in
-                    if let err = err {
-                        print("Error removing document: \(err)")
-                    } else {
-                        print("Document successfully removed!")
-                    }
+        do{
+            db.collection("tasks").document().delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
                 }
             }
         }

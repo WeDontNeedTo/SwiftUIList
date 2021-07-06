@@ -15,7 +15,6 @@
 		231B7476268DE56A0040E965 /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 231B7475268DE56A0040E965 /* FirebaseDatabaseSwift-Beta */; };
 		231B7478268DE56A0040E965 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 231B7477268DE56A0040E965 /* FirebaseStorage */; };
 		231B747A268DE56A0040E965 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 231B7479268DE56A0040E965 /* FirebaseAuth */; };
-		231B747D268DE8FE0040E965 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231B747C268DE8FE0040E965 /* Repository.swift */; };
 		231B747F268E628E0040E965 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231B747E268E628E0040E965 /* TaskRepository.swift */; };
 		23363E4D267F464A00FF26A3 /* ActionTrashButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23363E4C267F464A00FF26A3 /* ActionTrashButton.swift */; };
 		2340BB8A268920F800E7A44F /* SignStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2340BB89268920F800E7A44F /* SignStatusView.swift */; };
@@ -43,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		2305B9072689378F00F6ED5B /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
-		231B747C268DE8FE0040E965 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		231B747E268E628E0040E965 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		23363E4C267F464A00FF26A3 /* ActionTrashButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTrashButton.swift; sourceTree = "<group>"; };
 		2340BB89268920F800E7A44F /* SignStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignStatusView.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 		231B747B268DE8E60040E965 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				231B747C268DE8FE0040E965 /* Repository.swift */,
 				231B747E268E628E0040E965 /* TaskRepository.swift */,
 			);
 			path = Repositories;
@@ -306,7 +303,6 @@
 				6B7ECBE4265E84E0009F799D /* ToDoElement.swift in Sources */,
 				2391C3A52688D17900BBCEB9 /* SignInView.swift in Sources */,
 				2305B9082689378F00F6ED5B /* CustomSearchBar.swift in Sources */,
-				231B747D268DE8FE0040E965 /* Repository.swift in Sources */,
 				2377F0E7268B75CE00E8167D /* SignUser.swift in Sources */,
 				23FF3F73268540770025D80F /* AppDelegate.swift in Sources */,
 				6BD80664265FB6AA00B10100 /* CheckButton.swift in Sources */,
