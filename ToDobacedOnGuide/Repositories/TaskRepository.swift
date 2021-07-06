@@ -41,8 +41,6 @@ class TaskRepository: ObservableObject{
     }
     
     func updateTask(task: ToDoElement)  {
-        
-        
         do{
             let doc = db.collection(path).document()
             try doc.setData(from: task)

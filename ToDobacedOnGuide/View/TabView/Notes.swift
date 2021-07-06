@@ -26,7 +26,13 @@ struct Notes: View {
         NavigationView{
             VStack{
                 List {
-                    CustomSearchBar(text: $text)
+                    //CustomSearchBar(text: $text)
+                    HStack{
+                    TextField("Enter", text: $text)
+                        Image(systemName: "magnifyingglass")
+                }
+                    //.textFieldStyle(RoundedBorderTextFieldStyle())
+                    
                     ForEach(filteredTasks.indices, id: \.self) { index in
                         if (!filteredTasks[index].isDeleted && !filteredTasks[index].isArcheveted) {
                             HStack {
