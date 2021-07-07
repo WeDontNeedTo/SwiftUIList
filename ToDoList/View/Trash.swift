@@ -27,6 +27,7 @@ struct Trash: View {
             .navigationTitle("Deleted")
         }
     }
+    
 }
 
 struct TrashView_Previews: PreviewProvider {

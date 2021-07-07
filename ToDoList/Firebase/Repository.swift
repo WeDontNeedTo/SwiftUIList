@@ -42,9 +42,10 @@ class TaskRepository: ObservableObject{
         }
         
         func updateTask(task: ToDoElement)  {
+            guard let taskId = tasks.indices else {return}
+            let doc = db.collection(path).document(taskId)
             
             do{
-                let doc = db.collection(path).document()
                 try doc.setData(from: task)
             }
             catch{
@@ -52,10 +53,9 @@ class TaskRepository: ObservableObject{
             }
         }
         
-        
         func deleteTask(task: ToDoElement)  {
             do{
-                db.collection("tasks").document().delete() { err in
+                db.collection(path).document().delete() { err in
                     if let err = err {
                         print("Error removing document: \(err)")
                     } else {

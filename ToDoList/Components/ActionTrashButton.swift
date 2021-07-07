@@ -5,6 +5,7 @@ struct ActionTrashButton: View {
     @Binding var isDeleted: Bool
     @Binding var showActionSheet: Bool
     @ObservedObject var tasks: TaskList
+    
     var idOfTask: Int
     
     var body: some View {

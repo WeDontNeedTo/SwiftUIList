@@ -3,7 +3,7 @@ import SwiftUI
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct ToDoElement: Hashable, Codable, Identifiable{
+struct ToDoElement: Hashable, Codable, Identifiable, Equatable{
     var id: Int
     var description: String
     var isDeleted: Bool
