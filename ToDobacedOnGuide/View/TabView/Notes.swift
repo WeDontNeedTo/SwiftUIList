@@ -5,7 +5,6 @@ struct Notes: View {
     @State var isSet: Bool = false
     @State var showSheetView = false
     @State var text: String = ""
-    
     var buttonAdd: some View {
         HStack{
             Button(action: {self.showSheetView.toggle()}, label: {
@@ -13,7 +12,7 @@ struct Notes: View {
                     .resizable()
                     .foregroundColor(.yellow)
                     .frame(width: 23, height: 23, alignment: .center)
-
+                
             })
         }
     }
@@ -28,10 +27,9 @@ struct Notes: View {
                 List {
                     //CustomSearchBar(text: $text)
                     HStack{
-                    TextField("Enter", text: $text)
+                        TextField("Enter", text: $text)
                         Image(systemName: "magnifyingglass")
-                }
-                    //.textFieldStyle(RoundedBorderTextFieldStyle())
+                    }
                     
                     ForEach(filteredTasks.indices, id: \.self) { index in
                         if (!filteredTasks[index].isDeleted && !filteredTasks[index].isArcheveted) {
@@ -54,6 +52,7 @@ struct Notes: View {
             }
             .onAppear{
                 tasks.getTasks()
+                
             }
             .navigationTitle("Notes")
             .navigationBarItems(trailing: buttonAdd)

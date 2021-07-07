@@ -35,20 +35,30 @@ struct AddToDoView: View {
             //            }, label: {
             //                Text("Add")
             //            })
-            trailing: Button(action: addTask) {
-                
+            
+//            trailing: Button(action: addTask) {
+//
+//                Text("Add")
+//            }
+            trailing: Button(action: {
+                tasks.addTask(task: ToDoElement(id: addnewtodo.capacity + 2, description: newTodo, isDeleted: false, isArcheveted: false))
+                self.showSheetView = false
+            }, label: {
                 Text("Add")
             })
+            
+            
+            )
             
         }
         
     }
-    func addTask() {
-        let task = ToDoElement(id: addnewtodo.count + 1, description: newTodo, isDeleted: false, isArcheveted: false)
-        tasks.addTask(task: task)
-        self.showSheetView = false
-        
-    }
+//    func addTask() {
+//        let task = ToDoElement(id: addnewtodo.count + 1, description: newTodo, isDeleted: false, isArcheveted: false)
+//        tasks.addTask(task: task)
+//        self.showSheetView = false
+//
+//    }
     
 }
 
