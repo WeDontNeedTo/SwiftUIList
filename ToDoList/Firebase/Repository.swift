@@ -13,6 +13,8 @@ class TaskRepository: ObservableObject{
     
 
     func getTasks(_ onSuccess: @escaping([ToDoElement]) -> Void) {
+        _ = [TaskList]()
+        
             db.collection("tasks").addSnapshotListener{ (querySnapshot, error) in
                 if let querySnapshot = querySnapshot{
                     self.tasks = querySnapshot.documents.compactMap{ document in
@@ -25,6 +27,7 @@ class TaskRepository: ObservableObject{
                         }
                         return nil
                     }
+                    onSuccess(self.tasks)
                 }
             }
         }
