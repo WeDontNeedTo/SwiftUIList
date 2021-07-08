@@ -41,25 +41,32 @@ class TaskRepository: ObservableObject{
             }
         }
         
-        func updateTask(task: ToDoElement)  {
-            guard let taskId = tasks.indices else {return}
-            let doc = db.collection(path).document(taskId)
-            
-            do{
-                try doc.setData(from: task)
-            }
-            catch{
-                print("Something wrong with update")
-            }
-        }
-        
-        func deleteTask(task: ToDoElement)  {
-            do{
-                db.collection(path).document().delete() { err in
-                    if let err = err {
-                        print("Error removing document: \(err)")
-                    } else {
-                        print("Document successfully removed!")
+
+    func updateTask(task: ToDoElement)  {
+           let user = Auth.auth().currentUser
+           if let id = task.id{
+               if let user = user{
+                   let doc = db.collection("tasks").document(user.uid).collection("tasks").document(id)
+                   do{
+                       try doc.setData(from: task)
+                   }
+                   catch{
+                       print("Something wrong with update")
+                   }
+               }
+           }
+       }
+
+    func deleteTask(task: ToDoElement)  {
+            let user = Auth.auth().currentUser
+            if let id = task.id{
+                if let user = user{
+                    db.collection("users").document(user.uid).collection("tasks").document(id).delete(){ err in
+                        if let err = err {
+                            print("Error removing document: \(err)")
+                        } else {
+                            print("Document successfully removed!")
+                        }
                     }
                 }
             }

@@ -50,7 +50,7 @@ struct ToDoList: View {
                                 CheckButton(isSet: $tasks.toDoElements[index].isArcheveted)
                                     
                             }
-//                            .onChange(of: self.tasks.toDoElements[index]) { task in tasks.updateTask(task: task)}
+                            .onChange(of: self.tasks.toDoElements[index]) { task in TaskList.updateTask(task: task)}
                         }
                         
                     }

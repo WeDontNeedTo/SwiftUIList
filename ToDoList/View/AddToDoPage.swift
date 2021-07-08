@@ -39,7 +39,7 @@ struct AddToDoPage: View {
    
      func addTask() {
 
-        let task = ToDoElement(id: addnewtodo.count + 1, description: newTodo , isDeleted: false, isArcheveted: false)
+        let task = ToDoElement( description: newTodo , isDeleted: false, isArcheveted: false)
         tasks.addTask(task: task)
         tasks.getTasks()
         self.showSheetView = false
