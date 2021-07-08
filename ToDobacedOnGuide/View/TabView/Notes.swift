@@ -49,10 +49,10 @@ struct Notes: View {
                     }
                     .onDelete(perform: { indexSet in
                         let index = indexSet[indexSet.startIndex]
-                        
+                      //  print("Before \(tasks.toDoElements[index])")
                         tasks.toDoElements[index].isDeleted.toggle()
-                        
                         tasks.updateTask(task: tasks.toDoElements[index])
+                      //  print("After \(tasks.toDoElements[index])")
                     })
                     
                 }

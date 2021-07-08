@@ -28,7 +28,7 @@ struct AddToDoView: View {
                 Text("Cancel").bold()
             },
             trailing: Button(action: {
-                tasks.addTask(task: ToDoElement(id: addnewtodo.capacity + 2, description: newTodo, isDeleted: false, isArcheveted: false))
+                tasks.addTask(task: ToDoElement(description: newTodo, isDeleted: false, isArcheveted: false))
                 self.showSheetView = false
             }, label: {
                 Text("Add")

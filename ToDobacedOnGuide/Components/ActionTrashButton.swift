@@ -10,6 +10,7 @@ struct ActionTrashButton: View {
     var body: some View {
         Button(action: {
             self.showActionSheet.toggle()
+          
         }, label: {
             Image(systemName: isSet ? "checkmark.circle" : "checkmark.circle.fill")
                 .foregroundColor(.yellow)
@@ -19,8 +20,8 @@ struct ActionTrashButton: View {
                     isDeleted.toggle()
                 }),
                 ActionSheet.Button.destructive(Text("Удалить"), action: {
-                    tasks.toDoElements.remove(at: idOfTask)
-                    print("в обычной \(tasks.toDoElements.count) и id \(idOfTask)")
+                    print("Deleted one!!!! \(tasks.toDoElements[idOfTask])")
+                    tasks.deleteTask(task: tasks.toDoElements[idOfTask])
                 }),
                 ActionSheet.Button.cancel()
             ] ) }
