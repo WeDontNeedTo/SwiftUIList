@@ -38,13 +38,21 @@ struct Notes: View {
                                     .strikethrough(filteredTasks[index].isArcheveted)
                                 Spacer()
                                 CheckButton(isSet: $tasks.toDoElements[index].isArcheveted)
+//                                    .onChange(of: self.tasks.toDoElements[index]) { task in
+//                                        tasks.updateTask(task: task)
+//                                    }
+
                             }
+
                         }
                         
                     }
                     .onDelete(perform: { indexSet in
                         let index = indexSet[indexSet.startIndex]
+                        
                         tasks.toDoElements[index].isDeleted.toggle()
+                        
+                        tasks.updateTask(task: tasks.toDoElements[index])
                     })
                     
                 }
@@ -52,6 +60,7 @@ struct Notes: View {
             }
             .onAppear{
                 tasks.getTasks()
+                
                 
             }
             .navigationTitle("Notes")

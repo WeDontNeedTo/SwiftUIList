@@ -27,19 +27,6 @@ struct AddToDoView: View {
             {
                 Text("Cancel").bold()
             },
-            //            trailing: Button(action: {
-            //                addnewtodo.append (ToDoElement(id: addnewtodo.count + 1, description: newTodo, isDeleted: false, isArcheveted: false))
-            //                print("в нью \(addnewtodo.count)")
-            //
-            //                self.showSheetView = false
-            //            }, label: {
-            //                Text("Add")
-            //            })
-            
-//            trailing: Button(action: addTask) {
-//
-//                Text("Add")
-//            }
             trailing: Button(action: {
                 tasks.addTask(task: ToDoElement(id: addnewtodo.capacity + 2, description: newTodo, isDeleted: false, isArcheveted: false))
                 self.showSheetView = false
