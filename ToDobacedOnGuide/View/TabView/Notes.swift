@@ -12,36 +12,34 @@ struct Notes: View {
                     .resizable()
                     .foregroundColor(.yellow)
                     .frame(width: 23, height: 23, alignment: .center)
-                
             })
         }
     }
     
-    var filteredTasks: [ToDoElement] {
-        tasks.toDoElements.filter({$0.description.contains(text) || text.isEmpty})
-    }
+//    var filteredTasks: [ToDoElement] {
+//        tasks.toDoElements.filter({$0.description.contains(text) || text.isEmpty})
+//
+//    }
     
     var body: some View {
         NavigationView{
             VStack{
                 List {
-                    //CustomSearchBar(text: $text)
                     HStack{
-                        TextField("Enter", text: $text)
+                        TextField("Enter text", text: $text)
                         Image(systemName: "magnifyingglass")
                     }
                     
-                    ForEach(filteredTasks.indices, id: \.self) { index in
-                        if (!filteredTasks[index].isDeleted && !filteredTasks[index].isArcheveted) {
+                    ForEach(tasks.toDoElements.indices, id: \.self) { index in
+                        if (!tasks.toDoElements[index].isDeleted && !tasks.toDoElements[index].isArcheveted) {
                             HStack {
-                                Text(filteredTasks[index].description)
-                                    .strikethrough(filteredTasks[index].isArcheveted)
+                                Text(tasks.toDoElements[index].description)
+                                    .strikethrough(tasks.toDoElements[index].isArcheveted)
                                 Spacer()
                                 CheckButton(isSet: $tasks.toDoElements[index].isArcheveted)
 //                                    .onChange(of: self.tasks.toDoElements[index]) { task in
 //                                        tasks.updateTask(task: task)
 //                                    }
-
                             }
 
                         }
@@ -49,10 +47,8 @@ struct Notes: View {
                     }
                     .onDelete(perform: { indexSet in
                         let index = indexSet[indexSet.startIndex]
-                      //  print("Before \(tasks.toDoElements[index])")
                         tasks.toDoElements[index].isDeleted.toggle()
                         tasks.updateTask(task: tasks.toDoElements[index])
-                      //  print("After \(tasks.toDoElements[index])")
                     })
                     
                 }
@@ -60,8 +56,6 @@ struct Notes: View {
             }
             .onAppear{
                 tasks.getTasks()
-                
-                
             }
             .navigationTitle("Notes")
             .navigationBarItems(trailing: buttonAdd)
@@ -72,7 +66,7 @@ struct Notes: View {
     }
 }
 
-struct RowsView_Previews: PreviewProvider {
+struct Notes_Previews: PreviewProvider {
     static var previews: some View {
         Notes(tasks: TaskList())
     }

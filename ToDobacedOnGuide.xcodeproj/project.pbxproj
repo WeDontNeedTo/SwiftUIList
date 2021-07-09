@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2305B9082689378F00F6ED5B /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305B9072689378F00F6ED5B /* CustomSearchBar.swift */; };
 		231B746E268DE56A0040E965 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 231B746D268DE56A0040E965 /* FirebaseFirestore */; };
 		231B7470268DE56A0040E965 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 231B746F268DE56A0040E965 /* FirebaseDatabase */; };
 		231B7472268DE56A0040E965 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 231B7471268DE56A0040E965 /* FirebaseFirestoreSwift-Beta */; };
@@ -41,7 +40,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2305B9072689378F00F6ED5B /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		231B747E268E628E0040E965 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		23363E4C267F464A00FF26A3 /* ActionTrashButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTrashButton.swift; sourceTree = "<group>"; };
 		2340BB89268920F800E7A44F /* SignStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignStatusView.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 				6B7ECBE3265E84E0009F799D /* ToDoElement.swift */,
 				2367E97F26769BF3008740ED /* TaskList.swift */,
 				6B8DDD702666672A007B9209 /* JsonConverter.swift */,
-				2305B9072689378F00F6ED5B /* CustomSearchBar.swift */,
 				2377F0E6268B75CE00E8167D /* SignUser.swift */,
 			);
 			path = Helpers;
@@ -302,7 +299,6 @@
 				6B8DDD7E26667F9A007B9209 /* Trash.swift in Sources */,
 				6B7ECBE4265E84E0009F799D /* ToDoElement.swift in Sources */,
 				2391C3A52688D17900BBCEB9 /* SignInView.swift in Sources */,
-				2305B9082689378F00F6ED5B /* CustomSearchBar.swift in Sources */,
 				2377F0E7268B75CE00E8167D /* SignUser.swift in Sources */,
 				23FF3F73268540770025D80F /* AppDelegate.swift in Sources */,
 				6BD80664265FB6AA00B10100 /* CheckButton.swift in Sources */,
