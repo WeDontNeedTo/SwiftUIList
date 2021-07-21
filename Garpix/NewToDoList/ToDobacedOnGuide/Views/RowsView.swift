@@ -33,6 +33,7 @@ struct RowsView: View {
                                 Spacer()
                                 CheckButton(isSet: $tasks.toDoElements[index].isArchived)
                             }
+                            .onChange(of: self.tasks.toDoElements[index]) { task in tasks.updateTask(task: task)}
                         }
                         
                     }

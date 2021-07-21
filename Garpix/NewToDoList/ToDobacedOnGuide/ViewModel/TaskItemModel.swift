@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TaskItemModel: ObservableObject {
+class TaskItemModel: ObservableObject, Identifiable {
     @Published var toDoElements: [ToDoElement] = []
 //    @Published var taskRepository = TaskRepository()
 //    @Published var taskListSearch: [ToDoElement] = []
